@@ -19,8 +19,8 @@ export default function Footer({ onOpenModal }: FooterProps) {
     "text-sm text-zinc-500 mb-5";
 
   return (
-    <footer className="relative w-full overflow-hidden bg-black text-[#E8E0DB] mt-auto">
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16 pt-20 pb-28 sm:pb-40">
+    <footer className="relative w-full overflow-hidden bg-black text-[#FAF9F5] mt-auto">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16 pt-16 pb-16 sm:pb-24">
         <div className="flex flex-col lg:flex-row lg:justify-between gap-14 lg:gap-10">
           {/* Brand block */}
           <div className="max-w-xs">
@@ -45,7 +45,7 @@ export default function Footer({ onOpenModal }: FooterProps) {
 
             <button
               onClick={openContact}
-              className="mt-8 inline-flex items-center rounded-full bg-white px-7 py-3 text-sm font-medium text-[#111118] transition-all duration-200 hover:bg-zinc-200 cursor-pointer"
+              className="mt-8 inline-flex items-center rounded-full bg-white px-7 py-3 text-sm font-medium text-[#111118] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-zinc-100 active:scale-[0.98] shadow-sm hover:shadow-lg cursor-pointer"
             >
               Get in touch
             </button>
@@ -83,7 +83,7 @@ export default function Footer({ onOpenModal }: FooterProps) {
                 </li>
                 <li>
                   <Link href="/gent" className={linkClass}>
-                    Gent
+                    Gen.T
                   </Link>
                 </li>
               </ul>
@@ -153,13 +153,19 @@ export default function Footer({ onOpenModal }: FooterProps) {
         </div>
       </div>
 
-      {/* Giant faded wordmark */}
-      <span
+      {/* Giant faded logo */}
+      <div
         aria-hidden="true"
-        className="pointer-events-none select-none absolute -bottom-[0.18em] left-1/2 -translate-x-1/2 w-full text-center font-bold leading-none tracking-tighter text-white/[0.035] text-[28vw] lg:text-[23vw]"
+        className="pointer-events-none select-none absolute -bottom-12 sm:-bottom-20 left-1/2 -translate-x-1/2 w-[48%] max-w-[560px] opacity-[0.08]"
       >
-        awe
-      </span>
+        <Image
+          src="/logo-white.png"
+          alt=""
+          width={920}
+          height={390}
+          className="w-full h-auto"
+        />
+      </div>
     </footer>
   );
 }

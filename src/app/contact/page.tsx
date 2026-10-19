@@ -31,7 +31,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-white text-[#1A1A22] antialiased">
+    <div className="min-h-screen w-full bg-[#FAF9F5] text-[#141815] antialiased selection:bg-[#18231E] selection:text-white">
       <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen w-full">
         
         {/* Left Column: Full-Height Atmospheric Editorial Column */}

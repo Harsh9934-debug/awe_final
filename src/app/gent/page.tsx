@@ -6,6 +6,7 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactModal from "@/components/ContactModal";
+import { FadeUp, StaggerContainer, StaggerItem, HoverCard } from "@/components/MotionWrapper";
 
 export default function GenTPage() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -178,7 +179,7 @@ export default function GenTPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#E8E0DB] text-[#1A1A22] flex flex-col antialiased selection:bg-[#1A1A22] selection:text-white">
+    <div className="min-h-screen bg-[#FAF9F5] text-[#141815] flex flex-col antialiased selection:bg-[#18231E] selection:text-white">
       {/* Navbar */}
       <Navbar
         currentPath="/academy"
@@ -186,7 +187,7 @@ export default function GenTPage() {
       />
 
       {/* 1. HERO */}
-      <section className="relative w-full overflow-hidden min-h-[600px] lg:min-h-[680px] flex items-center pt-32 pb-16 isolate">
+      <section className="relative w-full overflow-hidden min-h-[85vh] flex items-center pt-32 pb-20 isolate">
         <div className="absolute inset-0 z-0">
           <Image
             src="/genthero.png"
@@ -196,101 +197,110 @@ export default function GenTPage() {
             sizes="100vw"
             className="object-cover object-right"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#E8E0DB] via-[#E8E0DB]/85 sm:via-[#E8E0DB]/60 to-transparent lg:w-[62%] w-full pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#FAF9F5] via-[#FAF9F5]/90 sm:via-[#FAF9F5]/70 to-transparent lg:w-[62%] w-full pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#FAF9F5] via-transparent to-transparent h-28 bottom-0 pointer-events-none" />
         </div>
 
         <div className="relative z-10 max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10 w-full">
           <div className="max-w-xl">
-            <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-zinc-500 mb-5">
-              Gen.T
-            </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-bold tracking-tight text-[#1A4EAB] leading-[1.04] mb-6">
-              AI skills
-              <br />
-              for a more
-              <br />
-              human future.
-            </h1>
-            <p className="text-sm sm:text-base text-zinc-700 leading-relaxed font-normal mb-8 max-w-md">
-              Gen.T is a learning programme for young people, designed to build
-              practical AI skills, deeper self-awareness and the human
-              capabilities needed to navigate change with confidence and
-              purpose.
-            </p>
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <button
-                onClick={openEnquiry}
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#1A4EAB] px-6 py-3.5 text-sm font-medium text-white transition-all duration-200 hover:bg-[#123A80] hover:shadow-md cursor-pointer"
-              >
-                <span>Enquire about Gen.T</span>
-                <span className="transition-transform duration-200 group-hover:translate-x-0.5">
-                  →
-                </span>
-              </button>
-              <a
-                href="#about-gent"
-                className="inline-flex items-center justify-center rounded-full border border-zinc-400 bg-white/40 backdrop-blur-xs px-6 py-3.5 text-sm font-medium text-zinc-800 transition-all duration-200 hover:bg-white hover:border-zinc-500"
-              >
-                Explore the programme
-              </a>
-            </div>
+            <FadeUp delay={0.05}>
+              <div className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white/70 backdrop-blur-md px-3.5 py-1 text-[11px] font-semibold tracking-[0.18em] uppercase text-zinc-600 mb-6 shadow-2xs">
+                <span>Gen.T Programme</span>
+              </div>
+            </FadeUp>
+
+            <FadeUp delay={0.12}>
+              <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-bold tracking-tight text-zinc-950 leading-[1.06] mb-6">
+                AI skills
+                <br />
+                for a more
+                <br />
+                human future.
+              </h1>
+            </FadeUp>
+
+            <FadeUp delay={0.2}>
+              <p className="text-sm sm:text-base text-zinc-600 leading-relaxed font-normal mb-8 max-w-md">
+                Gen.T is a learning programme for young people, designed to build
+                practical AI skills, deeper self-awareness and the human
+                capabilities needed to navigate change with confidence and
+                purpose.
+              </p>
+            </FadeUp>
+
+            <FadeUp delay={0.28}>
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                <button
+                  onClick={openEnquiry}
+                  className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#18231E] px-7 py-3.5 text-sm font-medium text-white transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-black active:scale-[0.98] shadow-sm hover:shadow-md cursor-pointer"
+                >
+                  <span>Enquire about Gen.T</span>
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
+                </button>
+                <a
+                  href="#about-gent"
+                  className="inline-flex items-center justify-center rounded-full border border-zinc-300/80 bg-white/60 backdrop-blur-md px-6 py-3.5 text-sm font-medium text-zinc-800 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-white hover:border-zinc-400 active:scale-[0.98]"
+                >
+                  Explore the programme
+                </a>
+              </div>
+            </FadeUp>
           </div>
         </div>
       </section>
 
       {/* 2. FOUR FEATURES ROW */}
-      <section className="w-full py-12 sm:py-14 border-y border-zinc-200/60">
+      <section className="w-full py-16 border-y border-zinc-200/80 bg-white/50 backdrop-blur-xs">
         <div className="max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0">
-            {features.map((f, i) => (
-              <div
-                key={f.title}
-                className={`flex flex-col items-start ${
-                  i > 0 ? "lg:border-l lg:border-zinc-200 lg:pl-8" : ""
-                }`}
-              >
-                <div className="w-11 h-11 rounded-full bg-[#EFEBE5] flex items-center justify-center mb-4">
-                  <svg
-                    className="w-5 h-5 text-[#6B6660]"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.7"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    {f.icon}
-                  </svg>
-                </div>
-                <h3 className="text-[15px] font-bold text-[#1A4EAB] mb-1.5">
-                  {f.title}
-                </h3>
-                <p className="text-sm text-zinc-600 leading-relaxed max-w-[15rem]">
-                  {f.desc}
-                </p>
-              </div>
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            {features.map((f) => (
+              <StaggerItem key={f.title}>
+                <HoverCard className="flex flex-col items-start p-6 rounded-2xl bg-white border border-zinc-200/80 shadow-xs h-full">
+                  <div className="w-11 h-11 rounded-full bg-zinc-50 border border-zinc-200/80 flex items-center justify-center mb-4 shadow-2xs">
+                    <svg
+                      className="w-5 h-5 text-zinc-800"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.7"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      {f.icon}
+                    </svg>
+                  </div>
+                  <h3 className="text-base font-bold text-zinc-950 mb-1.5">
+                    {f.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+                    {f.desc}
+                  </p>
+                </HoverCard>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* 3. SECTION 01: ABOUT GEN.T */}
       <section
         id="about-gent"
-        className="w-full py-16 sm:py-24 border-b border-zinc-200/60"
+        className="w-full py-20 sm:py-28 border-b border-zinc-200/80"
       >
         <div className="max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <FadeUp>
               <SectionLabel num="01" text="About Gen.T" />
-              <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-[#1A4EAB] leading-[1.08] mb-5">
+              <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-zinc-950 leading-[1.08] mb-5">
                 More than AI training.
                 <br />
                 A broader foundation
                 <br />
                 for what&rsquo;s next.
               </h2>
-              <p className="text-sm sm:text-[15px] text-zinc-600 leading-relaxed mb-8 max-w-lg">
+              <p className="text-sm sm:text-base text-zinc-600 leading-relaxed mb-8 max-w-lg font-normal">
                 Gen.T combines practical AI learning with conscious leadership
                 and a research-informed approach to human development. It helps
                 young people build useful skills, stronger self-awareness and
@@ -299,72 +309,76 @@ export default function GenTPage() {
               </p>
               <button
                 onClick={openEnquiry}
-                className="group inline-flex items-center gap-2 rounded-full bg-[#1A4EAB] px-6 py-3.5 text-sm font-medium text-white transition-all duration-200 hover:bg-[#123A80] hover:shadow-md cursor-pointer"
+                className="group inline-flex items-center gap-2.5 rounded-full bg-[#18231E] px-7 py-3.5 text-sm font-medium text-white transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-black active:scale-[0.98] shadow-sm hover:shadow-md cursor-pointer"
               >
                 <span>Enquire about Gen.T</span>
-                <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
                   →
                 </span>
               </button>
-            </div>
+            </FadeUp>
 
-            <div className="relative rounded-2xl overflow-hidden shadow-xs aspect-[4/3] lg:aspect-[5/4] bg-zinc-100">
-              <Image
-                src="/hero.png"
-                alt="A young person looking out over a city at sunrise"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
+            <FadeUp delay={0.15}>
+              <div className="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/3] lg:aspect-[5/4] bg-zinc-100 border border-zinc-200/80 group">
+                <Image
+                  src="/hero.png"
+                  alt="A young person looking out over a city at sunrise"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover group-hover:scale-103 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                />
+              </div>
+            </FadeUp>
           </div>
         </div>
       </section>
 
       {/* 4. SECTION 02: WHO IT'S FOR */}
-      <section className="w-full py-16 sm:py-24 border-b border-zinc-200/60">
+      <section className="w-full py-20 sm:py-28 border-b border-zinc-200/80 bg-white/40">
         <div className="max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <FadeUp>
               <SectionLabel num="02" text="Who it's for" />
-              <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-[#1A4EAB] leading-[1.08] mb-5">
+              <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-zinc-950 leading-[1.08] mb-5">
                 For curious, open-minded
                 <br />
                 young people.
               </h2>
-              <p className="text-sm sm:text-[15px] text-zinc-600 leading-relaxed max-w-lg">
+              <p className="text-sm sm:text-base text-zinc-600 leading-relaxed max-w-lg">
                 Gen.T is for students and early career individuals who want to
                 understand AI, develop practical skills and explore the human
                 side of change &mdash; so they can make better decisions for
                 themselves, their communities and the world around them.
               </p>
-            </div>
+            </FadeUp>
 
-            <div className="space-y-7">
-              {audience.map((a) => (
-                <div key={a.title} className="flex items-start gap-4">
-                  <div className="w-11 h-11 shrink-0 rounded-full bg-[#EFEBE5] flex items-center justify-center">
-                    <svg
-                      className="w-5 h-5 text-[#6B6660]"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.7"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      {a.icon}
-                    </svg>
+            <div className="space-y-6">
+              {audience.map((a, i) => (
+                <FadeUp key={a.title} delay={i * 0.1}>
+                  <div className="flex items-start gap-5 p-5 rounded-2xl bg-white border border-zinc-200/80 shadow-xs hover:shadow-md transition-shadow duration-300">
+                    <div className="w-12 h-12 shrink-0 rounded-2xl bg-zinc-50 border border-zinc-200 flex items-center justify-center shadow-2xs">
+                      <svg
+                        className="w-5 h-5 text-zinc-800"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.7"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        {a.icon}
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-zinc-950 mb-1">
+                        {a.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed max-w-md">
+                        {a.desc}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-[15px] font-bold text-[#1A4EAB] mb-1">
-                      {a.title}
-                    </h3>
-                    <p className="text-sm text-zinc-600 leading-relaxed max-w-md">
-                      {a.desc}
-                    </p>
-                  </div>
-                </div>
+                </FadeUp>
               ))}
             </div>
           </div>
@@ -372,129 +386,134 @@ export default function GenTPage() {
       </section>
 
       {/* 5. SECTION 03: PROGRAMME BENEFITS */}
-      <section className="w-full py-16 sm:py-24 border-b border-zinc-200/60">
+      <section className="w-full py-20 sm:py-28 border-b border-zinc-200/80">
         <div className="max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <FadeUp>
               <SectionLabel num="03" text="Programme benefits" />
-              <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-[#1A4EAB] leading-[1.08] mb-5">
+              <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-zinc-950 leading-[1.08] mb-5">
                 Skills for today.
                 <br />
                 Perspective for tomorrow.
               </h2>
-              <p className="text-sm sm:text-[15px] text-zinc-600 leading-relaxed max-w-lg">
+              <p className="text-sm sm:text-base text-zinc-600 leading-relaxed max-w-lg">
                 Gen.T helps young people develop a balance of practical skills
                 and human awareness, so they can use AI thoughtfully and step
                 into the future with confidence.
               </p>
-            </div>
+            </FadeUp>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {benefits.map((b) => (
-                <div
-                  key={b.title}
-                  className="rounded-xl border border-zinc-200/80 bg-[#F6F6F6] p-5"
-                >
-                  <div className="w-9 h-9 rounded-full bg-[#EFEBE5] flex items-center justify-center mb-3">
-                    <svg
-                      className="w-[18px] h-[18px] text-[#6B6660]"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.7"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      {b.icon}
-                    </svg>
-                  </div>
-                  <h3 className="text-sm font-bold text-[#1A4EAB] mb-1">
-                    {b.title}
-                  </h3>
-                  <p className="text-xs text-zinc-600 leading-relaxed">
-                    {b.desc}
-                  </p>
-                </div>
+                <StaggerItem key={b.title}>
+                  <HoverCard className="rounded-2xl border border-zinc-200/80 bg-white p-6 shadow-xs h-full">
+                    <div className="w-10 h-10 rounded-full bg-zinc-50 border border-zinc-200 flex items-center justify-center mb-4">
+                      <svg
+                        className="w-5 h-5 text-zinc-800"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.7"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        {b.icon}
+                      </svg>
+                    </div>
+                    <h3 className="text-base font-bold text-zinc-950 mb-1.5">
+                      {b.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+                      {b.desc}
+                    </p>
+                  </HoverCard>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerContainer>
           </div>
         </div>
       </section>
 
       {/* 6. SECTION 04: WHAT YOU'LL LEARN (image + curriculum) */}
-      <section className="w-full py-16 sm:py-24 border-b border-zinc-200/60">
+      <section className="w-full py-20 sm:py-28 border-b border-zinc-200/80 bg-white/40">
         <div className="max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div className="relative rounded-2xl overflow-hidden shadow-xs aspect-[4/3] bg-zinc-100 order-2 lg:order-1">
-              <Image
-                src="/academyhero.png"
-                alt="A young person studying at a laptop"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <FadeUp delay={0.1} className="order-2 lg:order-1">
+              <div className="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/3] bg-zinc-100 border border-zinc-200/80 group">
+                <Image
+                  src="/academyhero.png"
+                  alt="A young person studying at a laptop"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover group-hover:scale-103 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                />
+              </div>
+            </FadeUp>
 
             <div className="order-1 lg:order-2">
-              <SectionLabel num="04" text="What you'll learn" />
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1A4EAB] leading-[1.1] mb-4">
-                A practical and reflective curriculum.
-              </h2>
-              <p className="text-sm sm:text-[15px] text-zinc-600 leading-relaxed mb-7 max-w-lg">
-                The programme combines hands-on learning with guided reflection,
-                helping participants build both technical skills and the human
-                capabilities to use them well.
-              </p>
+              <FadeUp>
+                <SectionLabel num="04" text="What you'll learn" />
+                <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-950 leading-[1.1] mb-4">
+                  A practical and reflective curriculum.
+                </h2>
+                <p className="text-sm sm:text-base text-zinc-600 leading-relaxed mb-8 max-w-lg">
+                  The programme combines hands-on learning with guided reflection,
+                  helping participants build both technical skills and the human
+                  capabilities to use them well.
+                </p>
 
-              <div className="border-t border-zinc-200">
-                {curriculum.map((c, i) => {
-                  const open = openCurriculum === i;
-                  return (
-                    <div key={c.title} className="border-b border-zinc-200">
-                      <button
-                        onClick={() => setOpenCurriculum(open ? null : i)}
-                        className="w-full flex items-center gap-4 py-4 text-left cursor-pointer group"
-                      >
-                        <span className="w-7 h-7 shrink-0 rounded-full border border-zinc-300 bg-white flex items-center justify-center text-[11px] font-bold text-[#1A4EAB]">
-                          {String(i + 1).padStart(2, "0")}
-                        </span>
-                        <span className="flex-1 text-sm font-semibold text-[#1A4EAB]">
-                          {c.title}
-                        </span>
-                        <span
-                          className={`text-zinc-400 text-lg leading-none transition-transform ${
-                            open ? "rotate-45" : ""
-                          }`}
+                <div className="border-t border-zinc-200/90 divide-y divide-zinc-200/90">
+                  {curriculum.map((c, i) => {
+                    const open = openCurriculum === i;
+                    return (
+                      <div key={c.title} className="transition-colors duration-200">
+                        <button
+                          onClick={() => setOpenCurriculum(open ? null : i)}
+                          className="w-full flex items-center gap-4 py-4.5 text-left cursor-pointer group"
                         >
-                          +
-                        </span>
-                      </button>
-                      {open && (
-                        <p className="pl-11 pr-6 pb-4 -mt-1 text-xs sm:text-sm text-zinc-600 leading-relaxed">
-                          {c.body}
-                        </p>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
+                          <span className="w-8 h-8 shrink-0 rounded-full border border-zinc-300 bg-white flex items-center justify-center text-xs font-semibold text-zinc-800 shadow-2xs group-hover:border-zinc-900 group-hover:text-black">
+                            {String(i + 1).padStart(2, "0")}
+                          </span>
+                          <span className="flex-1 text-sm sm:text-base font-semibold text-zinc-950 group-hover:text-black tracking-tight">
+                            {c.title}
+                          </span>
+                          <span
+                            className={`w-7 h-7 rounded-full border border-zinc-200 flex items-center justify-center text-xs font-medium transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] shrink-0 ${
+                              open
+                                ? "bg-[#18231E] text-white border-[#18231E] rotate-45"
+                                : "bg-white text-zinc-600 group-hover:border-zinc-900 group-hover:text-black"
+                            }`}
+                          >
+                            +
+                          </span>
+                        </button>
+                        {open && (
+                          <p className="pl-12 pr-6 pb-5 text-xs sm:text-sm text-zinc-600 leading-relaxed font-normal">
+                            {c.body}
+                          </p>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </FadeUp>
             </div>
           </div>
         </div>
       </section>
 
       {/* 7. SECTION 05: MEET THE FOUNDER */}
-      <section className="w-full py-16 sm:py-24 border-b border-zinc-200/60">
+      <section className="w-full py-20 sm:py-28 border-b border-zinc-200/80">
         <div className="max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <FadeUp>
               <SectionLabel num="05" text="Meet the founder" />
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1A4EAB] leading-[1.1] mb-5">
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-950 leading-[1.1] mb-5">
                 Guided by experience.
                 <br />
                 Grounded in people.
               </h2>
-              <p className="text-sm sm:text-[15px] text-zinc-600 leading-relaxed mb-7 max-w-lg">
+              <p className="text-sm sm:text-base text-zinc-600 leading-relaxed mb-7 max-w-lg font-normal">
                 Gen.T is founded by Sean Lee-Davies, a conscious leadership
                 mentor, filmmaker and three-time TEDx speaker. His work explores
                 the relationship between technology, leadership and human
@@ -504,59 +523,65 @@ export default function GenTPage() {
               </p>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-[#1A4EAB] hover:text-black border-b border-[#1A4EAB] pb-0.5"
+                className="group inline-flex items-center gap-2 text-sm font-semibold text-zinc-950 hover:text-black border-b border-black pb-0.5"
               >
                 <span>Read more about Sean</span>
-                <span>→</span>
+                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               </Link>
-            </div>
+            </FadeUp>
 
-            <div className="relative rounded-2xl overflow-hidden shadow-xs aspect-[4/3] lg:aspect-[5/4] bg-zinc-100">
-              <Image
-                src="/sec6.png"
-                alt="Sean Lee-Davies"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
+            <FadeUp delay={0.15}>
+              <div className="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/3] lg:aspect-[5/4] bg-zinc-100 border border-zinc-200/80 group">
+                <Image
+                  src="/sec6.png"
+                  alt="Sean Lee-Davies"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover group-hover:scale-103 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                />
+              </div>
+            </FadeUp>
           </div>
         </div>
       </section>
 
       {/* 8. SECTION 06: FAQs */}
-      <section className="w-full py-16 sm:py-24 border-b border-zinc-200/60">
+      <section className="w-full py-20 sm:py-28 border-b border-zinc-200/80 bg-white/40">
         <div className="max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-16 items-start">
-            <div>
-              <SectionLabel num="06" text="Frequently asked questions" />
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1A4EAB]">
-                FAQs
-              </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+            <div className="lg:col-span-5">
+              <FadeUp>
+                <SectionLabel num="06" text="Frequently asked questions" />
+                <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-950">
+                  FAQs
+                </h2>
+              </FadeUp>
             </div>
 
-            <div className="border-t border-zinc-200 lg:pt-2">
+            <div className="lg:col-span-7 border-t border-zinc-200/90 divide-y divide-zinc-200/90">
               {faqs.map((f, i) => {
                 const open = openFaq === i;
                 return (
-                  <div key={f.q} className="border-b border-zinc-200">
+                  <div key={f.q} className="transition-colors duration-200">
                     <button
                       onClick={() => setOpenFaq(open ? null : i)}
-                      className="w-full flex items-center justify-between gap-4 py-4 text-left cursor-pointer"
+                      className="w-full flex items-center justify-between gap-4 py-5 text-left cursor-pointer group"
                     >
-                      <span className="text-sm font-medium text-[#1A4EAB]">
+                      <span className="text-sm sm:text-base font-semibold text-zinc-950 group-hover:text-black tracking-tight transition-colors">
                         {f.q}
                       </span>
                       <span
-                        className={`text-zinc-400 text-lg leading-none transition-transform ${
-                          open ? "rotate-45" : ""
+                        className={`w-7 h-7 rounded-full border border-zinc-200 flex items-center justify-center text-xs font-medium transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] shrink-0 ${
+                          open
+                            ? "bg-[#18231E] text-white border-[#18231E] rotate-45"
+                            : "bg-white text-zinc-600 group-hover:border-zinc-900 group-hover:text-black"
                         }`}
                       >
                         +
                       </span>
                     </button>
                     {open && (
-                      <p className="pr-8 pb-4 -mt-1 text-xs sm:text-sm text-zinc-600 leading-relaxed">
+                      <p className="pr-8 pb-5 text-xs sm:text-sm text-zinc-600 leading-relaxed font-normal">
                         {f.a}
                       </p>
                     )}
@@ -569,35 +594,39 @@ export default function GenTPage() {
       </section>
 
       {/* 9. BOTTOM CTA BAND */}
-      <section className="w-full">
-        <div className="relative overflow-hidden min-h-[280px] sm:min-h-[320px] flex items-center">
-          <Image
-            src="/sunrise.png"
-            alt="Sunrise over mountains"
-            fill
-            sizes="100vw"
-            className="object-cover object-center z-0"
-          />
-          <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[#E8E0DB] via-[#E8E0DB]/80 to-transparent lg:w-3/4 w-full pointer-events-none" />
+      <section className="w-full py-20 sm:py-28">
+        <div className="max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10">
+          <FadeUp>
+            <div className="relative overflow-hidden rounded-3xl min-h-[340px] flex items-center shadow-xl border border-zinc-200/80 p-8 sm:p-12 lg:p-16 isolate">
+              <Image
+                src="/sunrise.png"
+                alt="Sunrise over mountains"
+                fill
+                sizes="100vw"
+                className="object-cover object-center z-0"
+              />
+              <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[#FAF9F5] via-[#FAF9F5]/90 to-transparent lg:w-3/4 w-full pointer-events-none" />
 
-          <div className="relative z-10 max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10 w-full py-14">
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1A4EAB] mb-3">
-              Be part of Gen.T
-            </h2>
-            <p className="text-sm sm:text-base text-zinc-700 leading-relaxed mb-7 max-w-md">
-              Gain the skills, awareness and judgement to navigate change and
-              help shape a more human future.
-            </p>
-            <button
-              onClick={openEnquiry}
-              className="group inline-flex items-center gap-2 rounded-full bg-[#1A4EAB] px-6 py-3.5 text-sm font-medium text-white transition-all duration-200 hover:bg-[#123A80] hover:shadow-md cursor-pointer"
-            >
-              <span>Enquire about Gen.T</span>
-              <span className="transition-transform duration-200 group-hover:translate-x-1">
-                →
-              </span>
-            </button>
-          </div>
+              <div className="relative z-10 max-w-xl">
+                <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-950 mb-4 leading-tight">
+                  Be part of Gen.T
+                </h2>
+                <p className="text-sm sm:text-base text-zinc-700 leading-relaxed mb-8 max-w-md font-normal">
+                  Gain the skills, awareness and judgement to navigate change and
+                  help shape a more human future.
+                </p>
+                <button
+                  onClick={openEnquiry}
+                  className="group inline-flex items-center gap-2.5 rounded-full bg-[#18231E] px-7 py-3.5 text-sm font-medium text-white transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-black active:scale-[0.98] shadow-sm hover:shadow-md cursor-pointer"
+                >
+                  <span>Enquire about Gen.T</span>
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
+                </button>
+              </div>
+            </div>
+          </FadeUp>
         </div>
       </section>
 

@@ -1,12 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import StackingCards, {
   StackingCardItem,
 } from "@/components/ui/stacking-cards";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { FadeUp, StaggerContainer, StaggerItem, HoverCard } from "@/components/MotionWrapper";
 
 export default function Home() {
   // State for interactive FAQ accordion (Section 07)
@@ -133,7 +135,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#E8E0DB] text-[#1A1A22] flex flex-col antialiased selection:bg-[#1A1A22] selection:text-white">
+    <div className="min-h-screen bg-[#FAF9F5] text-[#141815] flex flex-col antialiased selection:bg-[#18231E] selection:text-white">
       {/* NAVIGATION */}
       <Navbar currentPath="/" onOpenModal={handleOpenModal} />
 
@@ -150,52 +152,60 @@ export default function Home() {
             className="object-cover object-right"
           />
           {/* Subtle gradient overlay to guarantee text legibility */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#E8E0DB]/95 via-[#E8E0DB]/75 sm:via-[#E8E0DB]/50 to-transparent lg:w-[60%] w-full pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#FAF9F5]/98 via-[#FAF9F5]/80 sm:via-[#FAF9F5]/55 to-transparent lg:w-[62%] w-full pointer-events-none" />
         </div>
 
         <div className="relative z-10 max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10 w-full">
           <div className="max-w-xl">
             {/* Eyebrow */}
-            <p className="text-[11px] font-semibold tracking-[0.16em] uppercase text-zinc-500 mb-5">
-              AI training for leaders and teams
-            </p>
+            <FadeUp delay={0.1}>
+              <p className="text-[11px] font-semibold tracking-[0.16em] uppercase text-zinc-500 mb-5">
+                AI training for leaders and teams
+              </p>
+            </FadeUp>
 
             {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-bold tracking-tight text-zinc-950 leading-[1.08] mb-6">
-              AI skills.
-              <br />
-              Human wisdom.
-              <br />
-              Better decisions.
-            </h1>
+            <FadeUp delay={0.2}>
+              <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-bold tracking-tight text-zinc-950 leading-[1.08] mb-6">
+                AI skills.
+                <br />
+                Human wisdom.
+                <br />
+                Better decisions.
+              </h1>
+            </FadeUp>
 
             {/* Paragraph */}
-            <p className="text-sm sm:text-base text-zinc-700 leading-relaxed font-normal mb-8 max-w-lg">
-              Learn to apply AI to real work while developing the judgement,
-              adaptability and awareness to use it thoughtfully. AWE Intelligence
-              combines practical AI training with conscious leadership and a
-              research-informed approach to human learning.
-            </p>
+            <FadeUp delay={0.3}>
+              <p className="text-base sm:text-lg text-zinc-800 leading-relaxed font-normal mb-8 max-w-lg">
+                Learn to apply AI to real work while developing the judgement,
+                adaptability and awareness to use it thoughtfully. AWE Intelligence
+                combines practical AI training with conscious leadership and a
+                research-informed approach to human learning.
+              </p>
+            </FadeUp>
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <button
-                onClick={() => handleOpenModal("Explore training for your team")}
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#1A4EAB] px-6 py-3 text-xs sm:text-sm font-medium text-white transition-all duration-200 hover:bg-[#123A80] hover:shadow-sm cursor-pointer"
-              >
-                <span>Explore training for your team</span>
-                <span className="transition-transform duration-200 group-hover:translate-x-0.5">
-                  →
-                </span>
-              </button>
+            <FadeUp delay={0.4}>
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                <Link
+                  href="/contact"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#18231E] px-6 py-3.5 text-xs sm:text-sm font-medium text-white transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-black hover:shadow-xs active:scale-[0.98] cursor-pointer"
+                >
+                  <span>Explore training for your team</span>
+                  <span className="transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1">
+                    →
+                  </span>
+                </Link>
 
-              <a
-                href="#approach"
-                className="inline-flex items-center justify-center rounded-full border border-zinc-400 bg-white/40 backdrop-blur-xs px-6 py-3 text-xs sm:text-sm font-medium text-zinc-800 transition-all duration-200 hover:bg-white hover:border-zinc-500"
-              >
-                Discover our approach
-              </a>
-            </div>
+                <a
+                  href="#approach"
+                  className="inline-flex items-center justify-center rounded-full border border-zinc-400/80 bg-white/60 backdrop-blur-xs px-6 py-3.5 text-xs sm:text-sm font-medium text-zinc-800 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:hover:border-zinc-700 active:scale-[0.98]"
+                >
+                  Discover our approach
+                </a>
+              </div>
+            </FadeUp>
           </div>
         </div>
       </section>
@@ -336,51 +346,53 @@ export default function Home() {
       {/* 5. SECTION 04: START WITH YOUR TEAM (SUNRISE BANNER) */}
       <section className="w-full py-16 sm:py-24">
         <div className="max-w-[1600px] mx-auto px-6 sm:px-8 lg:px-10">
-          <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-md ring-1 ring-black/5 min-h-[380px] sm:min-h-[440px] flex items-center p-10 sm:p-14 lg:p-20">
-            {/* Background Image: sunrise.png */}
-            <Image
-              src="/sunrise.png"
-              alt="Serene sunrise over mountain ridge"
-              fill
-              priority
-              className="object-cover object-center z-0"
-            />
+          <FadeUp delay={0.1}>
+            <div className="group relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ring-1 ring-black/5 min-h-[380px] sm:min-h-[440px] flex items-center p-10 sm:p-14 lg:p-20">
+              {/* Background Image: sunrise.png */}
+              <Image
+                src="/sunrise.png"
+                alt="Serene sunrise over mountain ridge"
+                fill
+                priority
+                className="object-cover object-center z-0 group-hover:scale-[1.03] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+              />
 
-            {/* White gradient overlay for text legibility */}
-            <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[#E8E0DB]/95 via-[#E8E0DB]/85 sm:via-[#E8E0DB]/65 to-transparent lg:w-4/5 w-full pointer-events-none" />
+              {/* Ivory gradient overlay for text legibility */}
+              <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[#FAF9F5]/98 via-[#FAF9F5]/85 sm:via-[#FAF9F5]/70 to-transparent lg:w-4/5 w-full pointer-events-none" />
 
-            {/* Content overlay */}
-            <div className="relative max-w-xl z-10">
-              {/* Section Tag */}
-              <div className="flex items-center gap-3 text-zinc-600 font-medium text-sm mb-5">
-                <span className="font-mono text-xs tracking-wider">04</span>
-                <span className="w-12 h-px bg-zinc-400"></span>
+              {/* Content overlay */}
+              <div className="relative max-w-xl z-10">
+                {/* Section Tag */}
+                <div className="flex items-center gap-3 text-zinc-600 font-medium text-sm mb-5">
+                  <span className="font-mono text-xs tracking-wider">04</span>
+                  <span className="w-12 h-px bg-zinc-400"></span>
+                </div>
+
+                {/* Title */}
+                <h2 className="text-3xl sm:text-5xl lg:text-[52px] font-bold tracking-tight text-zinc-950 leading-[1.05] mb-5">
+                  Start with your team.
+                </h2>
+
+                {/* Description */}
+                <p className="text-zinc-700 text-base sm:text-lg leading-relaxed mb-8 max-w-lg font-normal">
+                  Tell us where your team is today and what you want to achieve.
+                  We can help you explore the right starting point, from an
+                  introductory workshop to a focused adoption programme.
+                </p>
+
+                {/* Button */}
+                <Link
+                  href="/contact"
+                  className="group/btn inline-flex items-center gap-2 rounded-full bg-[#18231E] px-7 py-4 text-sm font-medium text-white transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-black hover:shadow-md cursor-pointer active:scale-[0.98]"
+                >
+                  <span>Discuss training for my team</span>
+                  <span className="transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/btn:translate-x-1">
+                    →
+                  </span>
+                </Link>
               </div>
-
-              {/* Title */}
-              <h2 className="text-3xl sm:text-5xl lg:text-[52px] font-bold tracking-tight text-zinc-950 leading-[1.05] mb-5">
-                Start with your team.
-              </h2>
-
-              {/* Description */}
-              <p className="text-zinc-700 text-base sm:text-lg leading-relaxed mb-8 max-w-lg">
-                Tell us where your team is today and what you want to achieve.
-                We can help you explore the right starting point, from an
-                introductory workshop to a focused adoption programme.
-              </p>
-
-              {/* Button */}
-              <button
-                onClick={() => handleOpenModal("Discuss training for my team")}
-                className="group inline-flex items-center gap-2 rounded-full bg-[#1A4EAB] px-7 py-4 text-sm font-medium text-white transition-all duration-200 hover:bg-[#123A80] hover:shadow-md cursor-pointer"
-              >
-                <span>Discuss training for my team</span>
-                <span className="transition-transform duration-200 group-hover:translate-x-0.5">
-                  →
-                </span>
-              </button>
             </div>
-          </div>
+          </FadeUp>
         </div>
       </section>
 
@@ -388,7 +400,7 @@ export default function Home() {
       <section id="approach" className="w-full py-16 sm:py-24">
         <div className="max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10">
           {/* Header */}
-          <div className="mb-12">
+          <FadeUp delay={0.1} className="mb-12">
             <div className="flex items-center gap-3 text-zinc-500 font-medium text-xs mb-2">
               <span className="font-mono text-xs">05</span>
               <span className="w-10 h-px bg-zinc-300"></span>
@@ -404,13 +416,13 @@ export default function Home() {
               keep learning: practise on real tasks, question the output and take
               responsibility for the decision.
             </p>
-          </div>
+          </FadeUp>
 
           {/* 3 Pillars Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-7 mb-14 items-stretch">
+          <StaggerContainer delayChildren={0.15} staggerDelta={0.1} className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-7 mb-14">
             {/* Pillar 1: Practical AI Skills */}
-            <div className="relative flex flex-col h-full rounded-2xl border border-zinc-200/80 bg-white shadow-sm">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-t-2xl bg-zinc-100">
+            <StaggerItem>
+              <HoverCard liftY={0} className="relative aspect-[4/5] rounded-3xl overflow-hidden group">
                 <Image
                   src="/sec5one.png"
                   alt="Practical AI Skills"
@@ -418,35 +430,28 @@ export default function Home() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover"
                 />
-              </div>
-              <div className="relative flex flex-col px-6 pt-11 pb-7">
-                <div className="absolute -top-7 left-6 w-14 h-14 rounded-full bg-[#1A1A22] flex items-center justify-center shadow-lg ring-4 ring-white">
-                  <svg
-                    className="w-6 h-6 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.6"
-                  >
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/5" />
+                <div className="absolute top-5 left-5 z-10 w-12 h-12 rounded-full bg-white/15 backdrop-blur-sm border border-white/25 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.6">
                     <circle cx="12" cy="12" r="9" />
                     <line x1="3" y1="12" x2="21" y2="12" />
                     <path d="M12 3a14 14 0 0 1 4 9 14 14 0 0 1-4 9 14 14 0 0 1-4-9 14 14 0 0 1 4-9z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-zinc-950 mb-2">
-                  Practical AI skills
-                </h3>
-                <p className="text-sm text-zinc-600 leading-relaxed">
-                  Build confidence through relevant examples and hands-on
-                  practice. Learn how to frame a task, write useful prompts,
-                  evaluate responses and apply AI where it adds value.
-                </p>
-              </div>
-            </div>
+                <div className="absolute inset-x-0 bottom-0 z-10 p-6 sm:p-7">
+                  <h3 className="text-xl font-semibold text-white mb-2.5 tracking-tight">
+                    Practical AI skills
+                  </h3>
+                  <p className="text-[13px] text-white/80 leading-relaxed">
+                    Build confidence through relevant examples and hands-on practice. Learn how to frame a task, write useful prompts, evaluate responses and apply AI where it adds value.
+                  </p>
+                </div>
+              </HoverCard>
+            </StaggerItem>
 
             {/* Pillar 2: Conscious Leadership */}
-            <div className="relative flex flex-col h-full rounded-2xl border border-zinc-200/80 bg-white shadow-sm">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-t-2xl bg-zinc-100">
+            <StaggerItem>
+              <HoverCard liftY={0} className="relative aspect-[4/5] rounded-3xl overflow-hidden group">
                 <Image
                   src="/sec5sec.png"
                   alt="Conscious Leadership"
@@ -454,37 +459,29 @@ export default function Home() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover"
                 />
-              </div>
-              <div className="relative flex flex-col px-6 pt-11 pb-7">
-                <div className="absolute -top-7 left-6 w-14 h-14 rounded-full bg-[#1A1A22] flex items-center justify-center shadow-lg ring-4 ring-white">
-                  <svg
-                    className="w-6 h-6 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.6"
-                  >
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/5" />
+                <div className="absolute top-5 left-5 z-10 w-12 h-12 rounded-full bg-white/15 backdrop-blur-sm border border-white/25 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.6">
                     <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
                     <circle cx="9" cy="7" r="4" />
                     <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
                     <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-zinc-950 mb-2">
-                  Conscious leadership
-                </h3>
-                <p className="text-sm text-zinc-600 leading-relaxed">
-                  Connect AI adoption to purpose, responsibility and the people
-                  affected by it. Explore how to lead change, communicate clearly
-                  and make considered choices about what to automate, where to
-                  experiment and when to involve others.
-                </p>
-              </div>
-            </div>
+                <div className="absolute inset-x-0 bottom-0 z-10 p-6 sm:p-7">
+                  <h3 className="text-xl font-semibold text-white mb-2.5 tracking-tight">
+                    Conscious leadership
+                  </h3>
+                  <p className="text-[13px] text-white/80 leading-relaxed">
+                    Connect AI adoption to purpose, responsibility and the people affected by it. Explore how to lead change, communicate clearly and make considered choices about what to automate, where to experiment and when to involve others.
+                  </p>
+                </div>
+              </HoverCard>
+            </StaggerItem>
 
             {/* Pillar 3: Awareness and Human Wisdom */}
-            <div className="relative flex flex-col h-full rounded-2xl border border-zinc-200/80 bg-white shadow-sm">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-t-2xl bg-zinc-100">
+            <StaggerItem>
+              <HoverCard liftY={0} className="relative aspect-[4/5] rounded-3xl overflow-hidden group">
                 <Image
                   src="/sec5third.png"
                   alt="Awareness and human wisdom"
@@ -492,37 +489,28 @@ export default function Home() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover"
                 />
-              </div>
-              <div className="relative flex flex-col px-6 pt-11 pb-7">
-                <div className="absolute -top-7 left-6 w-14 h-14 rounded-full bg-[#1A1A22] flex items-center justify-center shadow-lg ring-4 ring-white">
-                  <svg
-                    className="w-6 h-6 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.6"
-                  >
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/5" />
+                <div className="absolute top-5 left-5 z-10 w-12 h-12 rounded-full bg-white/15 backdrop-blur-sm border border-white/25 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.6">
                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
                     <circle cx="12" cy="12" r="3" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-zinc-950 mb-2">
-                  Awareness and human wisdom
-                </h3>
-                <p className="text-sm text-zinc-600 leading-relaxed">
-                  Our approach draws on neuroscience and behavioural research,
-                  alongside ancient wisdom traditions. We pair practical AI
-                  learning with reflection, meditation and optional breathwork to
-                  cultivate attention, emotional awareness and more considered
-                  decisions.
-                </p>
-              </div>
-            </div>
-          </div>
+                <div className="absolute inset-x-0 bottom-0 z-10 p-6 sm:p-7">
+                  <h3 className="text-xl font-semibold text-white mb-2.5 tracking-tight">
+                    Awareness and human wisdom
+                  </h3>
+                  <p className="text-[13px] text-white/80 leading-relaxed">
+                    Our approach draws on neuroscience and behavioural research, alongside ancient wisdom traditions. We pair practical AI learning with reflection, meditation and optional breathwork to cultivate attention, emotional awareness and more considered decisions.
+                  </p>
+                </div>
+              </HoverCard>
+            </StaggerItem>
+          </StaggerContainer>
 
           {/* 1. LEARN THROUGH DELIBERATE PRACTICE - ARCHITECTURAL MILESTONE TRACK */}
           <div className="pt-16 pb-16 sm:pb-20 border-t border-zinc-200/80">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 sm:mb-14">
+            <FadeUp delay={0.1} className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 sm:mb-14">
               <div>
                 <p className="text-[11px] font-semibold tracking-[0.16em] uppercase text-zinc-500 mb-2">
                   Practice Framework
@@ -534,10 +522,10 @@ export default function Home() {
               <p className="text-xs sm:text-sm text-zinc-600 max-w-md font-normal leading-relaxed">
                 A structured four-stage cycle to test outputs, challenge assumptions, and keep human discernment at the center.
               </p>
-            </div>
+            </FadeUp>
 
             {/* Continuous Architectural Pipeline (4 Stages) */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+            <StaggerContainer delayChildren={0.15} staggerDelta={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
               {[
                 {
                   n: "01",
@@ -585,7 +573,7 @@ export default function Home() {
                   ),
                 },
               ].map((step) => (
-                <div
+                <StaggerItem
                   key={step.n}
                   className="group relative flex flex-col pt-6 border-t-2 border-zinc-200 hover:border-zinc-950 transition-colors duration-300"
                 >
@@ -593,7 +581,7 @@ export default function Home() {
                     <span className="font-mono text-xs font-semibold tracking-wider text-zinc-400 group-hover:text-zinc-950 transition-colors">
                       {step.n} · {step.phase}
                     </span>
-                    <div className="w-9 h-9 rounded-xl bg-zinc-100 group-hover:bg-[#1A1A22] group-hover:text-white text-zinc-700 flex items-center justify-center transition-all duration-300 shadow-2xs">
+                    <div className="w-9 h-9 rounded-xl text-zinc-700 flex items-center justify-center">
                       <svg
                         className="w-[18px] h-[18px]"
                         viewBox="0 0 24 24"
@@ -614,15 +602,15 @@ export default function Home() {
                   <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed font-normal">
                     {step.desc}
                   </p>
-                </div>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerContainer>
           </div>
 
           {/* 2. WHAT INFORMS THE APPROACH - LUXURY EDITORIAL SPREAD */}
           <div className="pt-16 pb-4 border-t border-zinc-200/80 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             {/* Left Column: Thesis & Intellectual Stance */}
-            <div className="lg:col-span-6 space-y-5">
+            <FadeUp delay={0.1} className="lg:col-span-6 space-y-5">
               <div className="flex items-center gap-3 text-zinc-500 font-medium text-xs mb-1">
                 <span className="font-mono text-xs">05B</span>
                 <span className="w-10 h-px bg-zinc-300"></span>
@@ -644,14 +632,14 @@ export default function Home() {
               {/* Intellectual Integrity Pill */}
               <div className="pt-2">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-200/60 text-zinc-700 text-xs font-medium">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#1A4EAB]"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#18231E]"></span>
                   <span>Peer-reviewed rationale · Transparent boundaries</span>
                 </div>
               </div>
-            </div>
+            </FadeUp>
 
             {/* Right Column: Integrated Literature Index (NO BOX) */}
-            <div className="lg:col-span-6 lg:pt-1">
+            <FadeUp delay={0.2} className="lg:col-span-6 lg:pt-1">
               <div className="space-y-1">
                 <div className="flex items-center justify-between pb-3 text-xs font-semibold uppercase tracking-wider text-zinc-400">
                   <span>Literature Index</span>
@@ -703,15 +691,15 @@ export default function Home() {
                               {paper.author}
                             </span>
                             <span className="w-1 h-1 rounded-full bg-zinc-300"></span>
-                            <span className="text-[10px] uppercase font-semibold tracking-wider text-[#123A80]">
+                            <span className="text-[10px] uppercase font-semibold tracking-wider text-[#18231E]">
                               {paper.tag}
                             </span>
                           </div>
                         </div>
                       </div>
 
-                      <div className="shrink-0 w-7 h-7 rounded-full border border-zinc-200 flex items-center justify-center text-zinc-400 group-hover:border-zinc-900 group-hover:text-zinc-900 transition-all">
-                        <span className="text-xs font-medium transition-transform group-hover:translate-x-0.5">→</span>
+                      <div className="shrink-0 w-7 h-7 rounded-full border border-zinc-200 flex items-center justify-center text-zinc-400 group-hover:border-zinc-900 group-hover:text-zinc-900 transition-all duration-300">
+                        <span className="text-xs font-medium transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-0.5">→</span>
                       </div>
                     </button>
                   ))}
@@ -723,14 +711,14 @@ export default function Home() {
                   </p>
                   <button
                     onClick={handleExploreResearch}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1A1A22] hover:text-black cursor-pointer group"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#18231E] hover:text-black cursor-pointer group"
                   >
                     <span>View Studies & Methodology</span>
-                    <span className="transition-transform group-hover:translate-x-1">→</span>
+                    <span className="transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1">→</span>
                   </button>
                 </div>
               </div>
-            </div>
+            </FadeUp>
           </div>
         </div>
       </section>
@@ -740,19 +728,19 @@ export default function Home() {
         <div className="max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             {/* Left Column: Image of Sean */}
-            <div className="lg:col-span-5 relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm ring-1 ring-black/5 aspect-[4/5] bg-zinc-100">
+            <FadeUp delay={0.1} className="lg:col-span-5 relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm ring-1 ring-black/5 aspect-[4/5] bg-zinc-100 group">
               <Image
                 src="/sec6.png"
                 alt="Sean Lee-Davies"
                 fill
                 sizes="(max-width: 1024px) 100vw, 42vw"
-                className="object-cover"
+                className="object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
                 priority
               />
-            </div>
+            </FadeUp>
 
             {/* Right Column: Bio Content */}
-            <div className="lg:col-span-7 flex flex-col pt-1 sm:pt-2">
+            <FadeUp delay={0.2} className="lg:col-span-7 flex flex-col pt-1 sm:pt-2">
               {/* Section Tag */}
               <div className="flex items-center gap-3 text-zinc-500 font-medium text-xs mb-3">
                 <span className="font-mono text-xs">06</span>
@@ -790,27 +778,27 @@ export default function Home() {
 
               {/* Button */}
               <div>
-                <button
-                  onClick={() => handleOpenModal("Talk to us about your team")}
-                  className="group inline-flex items-center gap-2 rounded-full bg-[#1A4EAB] px-6 py-3.5 text-xs sm:text-sm font-medium text-white transition-all duration-200 hover:bg-[#123A80] hover:shadow-xs cursor-pointer"
+                <Link
+                  href="/contact"
+                  className="group inline-flex items-center gap-2 rounded-full bg-[#18231E] px-6 py-3.5 text-xs sm:text-sm font-medium text-white transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-black hover:shadow-xs cursor-pointer active:scale-[0.98]"
                 >
                   <span>Talk to us about your team</span>
-                  <span className="transition-transform duration-200 group-hover:translate-x-1">
+                  <span className="transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1">
                     →
                   </span>
-                </button>
+                </Link>
               </div>
-            </div>
+            </FadeUp>
           </div>
         </div>
       </section>
 
       {/* 8. SECTION 07: GENERAL QUESTIONS */}
-      <section id="faq" className="w-full py-20 sm:py-32 border-t border-zinc-200/80 bg-[#E8E0DB] relative isolate">
+      <section id="faq" className="w-full py-20 sm:py-32 border-t border-zinc-200/80 bg-[#FAF9F5] relative isolate">
         <div className="max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Column: Sticky anchor sidebar */}
-            <div className="lg:col-span-5 lg:sticky lg:top-28 self-start space-y-8">
+            <FadeUp delay={0.1} className="lg:col-span-5 lg:sticky lg:top-28 self-start space-y-8">
               <div>
                 <div className="flex items-center gap-3 text-zinc-500 font-medium text-xs mb-3">
                   <span className="font-mono text-xs">07</span>
@@ -835,9 +823,9 @@ export default function Home() {
                     <button
                       key={idx}
                       onClick={() => toggleFaq(idx)}
-                      className={`text-xs px-3.5 py-1.5 rounded-full transition-all duration-200 cursor-pointer font-medium ${
+                      className={`text-xs px-3.5 py-1.5 rounded-full transition-all duration-300 cursor-pointer font-medium ${
                         openFaq === idx
-                          ? "bg-[#1A1A22] text-white shadow-xs"
+                          ? "bg-[#18231E] text-white shadow-xs"
                           : "bg-zinc-200/60 text-zinc-700 hover:bg-zinc-300/80 hover:text-zinc-950"
                       }`}
                     >
@@ -848,22 +836,22 @@ export default function Home() {
               </div>
 
               {/* Direct Enquiry Card */}
-              <div className="rounded-2xl border border-zinc-200 bg-white/70 backdrop-blur-xs p-5 sm:p-6 shadow-2xs space-y-3">
+              <div className="rounded-2xl border border-zinc-200 bg-white/80 backdrop-blur-xs p-5 sm:p-6 shadow-2xs space-y-3">
                 <div className="text-xs font-semibold uppercase tracking-wider text-zinc-900">
                   Have a bespoke requirement?
                 </div>
                 <p className="text-xs text-zinc-600 leading-relaxed">
                   Every organisation begins at a different baseline. Let’s map out a format that reflects your team’s strategic and technical maturity.
                 </p>
-                <button
-                  onClick={() => handleOpenModal("Discuss training for my team")}
-                  className="group inline-flex items-center gap-2 text-xs font-semibold text-[#1A1A22] hover:text-black cursor-pointer pt-1"
+                <Link
+                  href="/contact"
+                  className="group inline-flex items-center gap-2 text-xs font-semibold text-[#18231E] hover:text-black cursor-pointer pt-1"
                 >
                   <span>Discuss training for my team</span>
-                  <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
-                </button>
+                  <span className="transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1">→</span>
+                </Link>
               </div>
-            </div>
+            </FadeUp>
 
             {/* Right Column: Premium Editorial Hairline Ledger (NO BOXES) */}
             <div className="lg:col-span-7 divide-y divide-zinc-200/90 border-y border-zinc-200/90">
@@ -904,7 +892,7 @@ export default function Home() {
                         <div
                           className={`w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-300 ${
                             isOpen
-                              ? "bg-[#1A1A22] border-[#1A1A22] text-white rotate-45 scale-105"
+                              ? "bg-[#18231E] border-[#18231E] text-white rotate-45 scale-105"
                               : "border-zinc-300 text-zinc-500 group-hover:border-zinc-900 group-hover:text-zinc-900"
                           }`}
                         >
@@ -946,12 +934,12 @@ export default function Home() {
       {/* 9. SECTION 08: RESEARCH BEHIND OUR APPROACH */}
       <section
         id="research"
-        className="w-full py-20 sm:py-32 border-t border-zinc-200/80 bg-[#E8E0DB] relative isolate"
+        className="w-full py-20 sm:py-32 border-t border-zinc-200/80 bg-[#FAF9F5] relative isolate"
       >
         <div className="max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Header - Sticky sidebar */}
-            <div className="lg:col-span-5 lg:sticky lg:top-28 self-start space-y-6">
+            <FadeUp delay={0.1} className="lg:col-span-5 lg:sticky lg:top-28 self-start space-y-6">
               <div>
                 <div className="flex items-center gap-3 text-zinc-500 font-medium text-xs mb-3">
                   <span className="font-mono text-xs">08</span>
@@ -967,9 +955,9 @@ export default function Home() {
               </div>
 
               {/* Distinguished Methodological Note Card */}
-              <div className="rounded-2xl border border-zinc-300/80 bg-white/70 backdrop-blur-xs p-5 sm:p-6 shadow-2xs space-y-3.5">
+              <div className="rounded-2xl border border-zinc-300/80 bg-white/80 backdrop-blur-xs p-5 sm:p-6 shadow-2xs space-y-3.5">
                 <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wider text-zinc-900">
-                  <span className="w-2 h-2 rounded-full bg-[#1A4EAB] inline-block"></span>
+                  <span className="w-2 h-2 rounded-full bg-[#18231E] inline-block"></span>
                   Methodological Integrity
                 </div>
                 <p className="text-xs text-zinc-600 leading-relaxed font-normal">
@@ -980,7 +968,7 @@ export default function Home() {
                   <span>Peer-Reviewed</span>
                 </div>
               </div>
-            </div>
+            </FadeUp>
 
             {/* Right List - Scholarly Research Dossier (NO BOXES) */}
             <div className="lg:col-span-7 divide-y divide-zinc-200/90 border-y border-zinc-200/90">
@@ -1020,7 +1008,7 @@ export default function Home() {
                         <div
                           className={`w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-300 ${
                             isOpen
-                              ? "bg-[#1A1A22] border-[#1A1A22] text-white rotate-45 scale-105"
+                              ? "bg-[#18231E] border-[#18231E] text-white rotate-45 scale-105"
                               : "border-zinc-300 text-zinc-500 group-hover:border-zinc-900 group-hover:text-zinc-900"
                           }`}
                         >
@@ -1069,7 +1057,7 @@ export default function Home() {
           onClick={() => setIsModalOpen(false)}
         >
           <div
-            className="relative w-full max-w-md rounded-2xl bg-[#E8E0DB] p-6 sm:p-7 shadow-2xl border border-zinc-200"
+            className="relative w-full max-w-md rounded-2xl bg-[#FAF9F5] p-6 sm:p-7 shadow-2xl border border-zinc-200"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
@@ -1083,7 +1071,7 @@ export default function Home() {
 
             {formSubmitted ? (
               <div className="py-8 text-center space-y-3">
-                <div className="w-10 h-10 rounded-full bg-[#EFEBE5] text-[#123A80] mx-auto flex items-center justify-center text-lg">
+                <div className="w-10 h-10 rounded-full bg-[#EFEBE5] text-[#18231E] mx-auto flex items-center justify-center text-lg">
                   ✓
                 </div>
                 <h3 className="text-lg font-semibold text-zinc-900">
@@ -1095,7 +1083,7 @@ export default function Home() {
                 </p>
                 <button
                   onClick={() => setIsModalOpen(false)}
-                  className="rounded-full bg-[#1A4EAB] px-5 py-2 text-xs font-medium text-white hover:bg-[#123A80] transition-all cursor-pointer"
+                  className="rounded-full bg-[#18231E] px-5 py-2 text-xs font-medium text-white hover:bg-black transition-all cursor-pointer"
                 >
                   Close
                 </button>
@@ -1126,7 +1114,7 @@ export default function Home() {
                       type="text"
                       required
                       placeholder="Jane Doe"
-                      className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-xs text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#1A1A22]"
+                      className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-xs text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#18231E]"
                     />
                   </div>
 
@@ -1138,7 +1126,7 @@ export default function Home() {
                       type="email"
                       required
                       placeholder="jane@company.com"
-                      className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-xs text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#1A1A22]"
+                      className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-xs text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#18231E]"
                     />
                   </div>
 
@@ -1149,7 +1137,7 @@ export default function Home() {
                     <input
                       type="text"
                       placeholder="Acme Corp · 25 team members"
-                      className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-xs text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#1A1A22]"
+                      className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-xs text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#18231E]"
                     />
                   </div>
 
@@ -1160,13 +1148,13 @@ export default function Home() {
                     <textarea
                       rows={3}
                       placeholder="Tell us about your team's goals, current AI adoption, or any specific challenges..."
-                      className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-xs text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#1A1A22]"
+                      className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-xs text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#18231E]"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full rounded-full bg-[#1A4EAB] py-2.5 text-xs font-medium text-white hover:bg-[#123A80] transition-all cursor-pointer shadow-2xs mt-2"
+                    className="w-full rounded-full bg-[#18231E] py-2.5 text-xs font-medium text-white hover:bg-black transition-all cursor-pointer shadow-2xs mt-2"
                   >
                     Send Enquiry →
                   </button>

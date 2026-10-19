@@ -1,33 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  /* AWE Intelligence palette (from aweintelligence.ai) */
-  --background: #E8E0DB;    /* warm beige — hero / primary bg */
-  --foreground: #1A1A22;    /* ink */
+  /* AWE Intelligence palette - Clean, warm, high-end editorial */
+  --background: #FAF9F5;
+  --foreground: #141815;
 
-  --awe-beige: #E8E0DB;     /* warm hero bg */
-  --awe-ink: #1A1A22;       /* headings / body text */
-  --awe-black: #111118;     /* dark panels */
-  --awe-blue: #1A4EAB;      /* royal-blue accent / CTA / links */
-  --awe-blue-deep: #123A80; /* hover / darker blue */
-  --awe-muted: #6B6660;     /* warm grey */
+  --awe-beige: #FAF9F5;
+  --awe-ink: #141815;
+  --awe-black: #0E1210;
+  --awe-dark: #18231E;
+  --awe-muted: #5F6762;
 
-  --awe-light: #F6F6F6;     /* light section bg */
-  --awe-tint: #EFEBE5;      /* soft warm tint */
+  --ease-framer: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-
-  --color-awe-beige: var(--awe-beige);
-  --color-awe-ink: var(--awe-ink);
-  --color-awe-black: var(--awe-black);
-  --color-awe-blue: var(--awe-blue);
-  --color-awe-blue-deep: var(--awe-blue-deep);
-  --color-awe-muted: var(--awe-muted);
-  --color-awe-light: var(--awe-light);
-  --color-awe-tint: var(--awe-tint);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -35,6 +25,7 @@
 
 html {
   scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
 }
 
 body {
@@ -43,4 +34,28 @@ body {
   font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: #18231E;
+  color: #FFFFFF;
+}
+
+/* Wonderful-style smooth micro-interactions */
+.smooth-lift {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.smooth-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.07);
+}
+
+/* Subtle image zoom */
+.smooth-zoom {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.smooth-zoom:hover {
+  transform: scale(1.03);
 }
