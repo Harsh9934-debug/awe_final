@@ -78,7 +78,7 @@ export default function TermsPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#FAF9F5] text-[#141815] flex flex-col antialiased selection:bg-[#18231e] selection:text-white">
+    <div className="min-h-screen bg-[#E8E0DB] text-[#1A1A22] flex flex-col antialiased selection:bg-[#1A1A22] selection:text-white">
       {/* Navbar */}
       <Navbar onOpenModal={() => setModalOpen(true)} />
 
@@ -93,7 +93,7 @@ export default function TermsPage() {
             sizes="100vw"
             className="object-cover object-right"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#FAF9F5]/95 via-[#FAF9F5]/75 sm:via-[#FAF9F5]/50 to-transparent lg:w-[60%] w-full pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#E8E0DB]/95 via-[#E8E0DB]/75 sm:via-[#E8E0DB]/50 to-transparent lg:w-[60%] w-full pointer-events-none" />
         </div>
 
         <div className="relative z-10 max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10 w-full">
@@ -380,7 +380,7 @@ export default function TermsPage() {
             sizes="100vw"
             className="object-cover object-center z-0"
           />
-          <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[#FAF9F5]/95 via-[#FAF9F5]/80 to-transparent lg:w-3/4 w-full pointer-events-none" />
+          <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[#E8E0DB]/95 via-[#E8E0DB]/80 to-transparent lg:w-3/4 w-full pointer-events-none" />
 
           <div className="relative z-10 max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10 w-full py-14">
             <p className="text-[11px] font-semibold tracking-[0.16em] uppercase text-zinc-600 mb-3">
@@ -395,7 +395,7 @@ export default function TermsPage() {
             </p>
             <button
               onClick={() => setModalOpen(true)}
-              className="group inline-flex items-center gap-2 rounded-full bg-[#18231E] px-6 py-3.5 text-sm font-medium text-white transition-all duration-200 hover:bg-black hover:shadow-md cursor-pointer"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#1A4EAB] px-6 py-3.5 text-sm font-medium text-white transition-all duration-200 hover:bg-[#123A80] hover:shadow-md cursor-pointer"
             >
               <span>Contact us</span>
               <span className="transition-transform duration-200 group-hover:translate-x-1">

@@ -21,7 +21,7 @@ export default function Navbar({
     { name: "Training & Advisory", href: "/training" },
     { name: "Our Approach", href: "/#approach" },
     { name: "Academy", href: "/academy" },
-    { name: "About", href: "/#about" },
+    { name: "About", href: "/about" },
   ];
 
   return (
@@ -69,19 +69,15 @@ export default function Navbar({
 
         {/* Primary CTA Button */}
         <div className="flex items-center gap-3">
-          <button
-            onClick={() =>
-              onOpenModal
-                ? onOpenModal("Discuss training for my team")
-                : (window.location.href = "/training#enquire")
-            }
-            className="group inline-flex items-center gap-2 rounded-full bg-[#18231E] px-4 sm:px-5 py-2 sm:py-2.5 text-xs font-medium text-white transition-all duration-200 hover:bg-black hover:shadow-xs cursor-pointer"
+          <Link
+            href="/contact"
+            className="group inline-flex items-center gap-2 rounded-full bg-[#1A4EAB] px-4 sm:px-5 py-2 sm:py-2.5 text-xs font-medium text-white transition-all duration-200 hover:bg-[#123A80] hover:shadow-xs cursor-pointer"
           >
             <span>Discuss training for my team</span>
             <span className="transition-transform duration-200 group-hover:translate-x-0.5">
               →
             </span>
-          </button>
+          </Link>
 
           {/* Mobile hamburger button */}
           {!minimal && (
@@ -119,7 +115,7 @@ export default function Navbar({
 
       {/* Mobile menu dropdown */}
       {!minimal && mobileMenuOpen && (
-        <div className="md:hidden px-6 pt-3 pb-6 border-b border-zinc-200/80 bg-[#FAF9F5]/98 backdrop-blur-md shadow-lg flex flex-col gap-4">
+        <div className="md:hidden px-6 pt-3 pb-6 border-b border-zinc-200/80 bg-[#E8E0DB]/98 backdrop-blur-md shadow-lg flex flex-col gap-4">
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -130,19 +126,13 @@ export default function Navbar({
               {link.name}
             </Link>
           ))}
-          <button
-            onClick={() => {
-              setMobileMenuOpen(false);
-              if (onOpenModal) {
-                onOpenModal("Discuss training for my team");
-              } else {
-                window.location.href = "/training#enquire";
-              }
-            }}
-            className="w-full text-center rounded-full bg-[#18231E] px-5 py-2.5 text-xs font-medium text-white hover:bg-black transition-all"
+          <Link
+            href="/contact"
+            onClick={() => setMobileMenuOpen(false)}
+            className="w-full text-center rounded-full bg-[#1A4EAB] px-5 py-2.5 text-xs font-medium text-white hover:bg-[#123A80] transition-all"
           >
             Discuss training for my team →
-          </button>
+          </Link>
         </div>
       )}
     </header>

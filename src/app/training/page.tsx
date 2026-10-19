@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -26,7 +27,7 @@ export default function TrainingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF9F5] text-[#141815] flex flex-col antialiased selection:bg-[#18231e] selection:text-white">
+    <div className="min-h-screen bg-[#E8E0DB] text-[#1A1A22] flex flex-col antialiased selection:bg-[#1A1A22] selection:text-white">
       {/* Navigation */}
       <Navbar
         currentPath="/training"
@@ -48,7 +49,7 @@ export default function TrainingPage() {
             sizes="100vw"
             className="object-cover object-right"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#FAF9F5]/95 via-[#FAF9F5]/75 sm:via-[#FAF9F5]/50 to-transparent lg:w-[60%] w-full pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#E8E0DB]/95 via-[#E8E0DB]/75 sm:via-[#E8E0DB]/50 to-transparent lg:w-[60%] w-full pointer-events-none" />
         </div>
 
         <div className="relative z-10 max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10 w-full">
@@ -70,15 +71,15 @@ export default function TrainingPage() {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <button
-                onClick={() => handleOpenEnquiry("Discuss training for my team")}
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#18231E] px-6 py-3 text-xs sm:text-sm font-medium text-white transition-all duration-200 hover:bg-black hover:shadow-sm cursor-pointer"
+              <Link
+                href="/contact"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#1A4EAB] px-6 py-3 text-xs sm:text-sm font-medium text-white transition-all duration-200 hover:bg-[#123A80] hover:shadow-sm cursor-pointer"
               >
                 <span>Discuss training for my team</span>
                 <span className="transition-transform duration-200 group-hover:translate-x-0.5">
                   →
                 </span>
-              </button>
+              </Link>
 
               <a
                 href="/#approach"
@@ -112,7 +113,7 @@ export default function TrainingPage() {
             <div className="lg:col-span-7 divide-y divide-zinc-200/70 pt-1">
               {/* Feature 1 */}
               <div className="py-6 first:pt-0 last:pb-0 flex items-start gap-5 sm:gap-6 group">
-                <div className="w-11 h-11 rounded-2xl border border-zinc-200 bg-white flex items-center justify-center shrink-0 shadow-2xs group-hover:border-zinc-900 group-hover:bg-[#18231E] group-hover:text-white transition-all duration-300">
+                <div className="w-11 h-11 rounded-2xl border border-zinc-200 bg-white flex items-center justify-center shrink-0 shadow-2xs group-hover:border-zinc-900 group-hover:bg-[#1A1A22] group-hover:text-white transition-all duration-300">
                   <svg className="w-5 h-5 text-zinc-800 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
                     <circle cx="12" cy="12" r="9" />
                     <line x1="3" y1="12" x2="21" y2="12" />
@@ -134,7 +135,7 @@ export default function TrainingPage() {
 
               {/* Feature 2 */}
               <div className="py-6 first:pt-0 last:pb-0 flex items-start gap-5 sm:gap-6 group">
-                <div className="w-11 h-11 rounded-2xl border border-zinc-200 bg-white flex items-center justify-center shrink-0 shadow-2xs group-hover:border-zinc-900 group-hover:bg-[#18231E] group-hover:text-white transition-all duration-300">
+                <div className="w-11 h-11 rounded-2xl border border-zinc-200 bg-white flex items-center justify-center shrink-0 shadow-2xs group-hover:border-zinc-900 group-hover:bg-[#1A1A22] group-hover:text-white transition-all duration-300">
                   <svg className="w-5 h-5 text-zinc-800 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
                     <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
                     <circle cx="9" cy="7" r="4" />
@@ -157,7 +158,7 @@ export default function TrainingPage() {
 
               {/* Feature 3 */}
               <div className="py-6 first:pt-0 last:pb-0 flex items-start gap-5 sm:gap-6 group">
-                <div className="w-11 h-11 rounded-2xl border border-zinc-200 bg-white flex items-center justify-center shrink-0 shadow-2xs group-hover:border-zinc-900 group-hover:bg-[#18231E] group-hover:text-white transition-all duration-300">
+                <div className="w-11 h-11 rounded-2xl border border-zinc-200 bg-white flex items-center justify-center shrink-0 shadow-2xs group-hover:border-zinc-900 group-hover:bg-[#1A1A22] group-hover:text-white transition-all duration-300">
                   <svg className="w-5 h-5 text-zinc-800 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
                     <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                   </svg>
@@ -199,7 +200,7 @@ export default function TrainingPage() {
               <div>
                 <button
                   onClick={() => handleOpenEnquiry("Discuss training for my team")}
-                  className="group inline-flex items-center gap-2 rounded-full border border-zinc-900 bg-white/80 backdrop-blur-xs px-5 py-2.5 text-xs font-semibold text-zinc-900 hover:bg-[#18231E] hover:text-white transition-all cursor-pointer shadow-2xs"
+                  className="group inline-flex items-center gap-2 rounded-full border border-zinc-900 bg-white/80 backdrop-blur-xs px-5 py-2.5 text-xs font-semibold text-zinc-900 hover:bg-[#1A1A22] hover:text-white transition-all cursor-pointer shadow-2xs"
                 >
                   <span>Talk to us about your team</span>
                   <span className="transition-transform group-hover:translate-x-0.5">→</span>
@@ -235,7 +236,7 @@ export default function TrainingPage() {
                     sizes="(max-width: 1024px) 100vw, 55vw"
                     className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
                   />
-                  <div className="absolute top-3 left-3 bg-[#FAF9F5]/90 backdrop-blur-xs px-3 py-1 rounded-full border border-black/5 text-[10px] font-mono font-semibold text-zinc-800">
+                  <div className="absolute top-3 left-3 bg-[#E8E0DB]/90 backdrop-blur-xs px-3 py-1 rounded-full border border-black/5 text-[10px] font-mono font-semibold text-zinc-800">
                     01 / PROGRAMME
                   </div>
                 </div>
@@ -265,7 +266,7 @@ export default function TrainingPage() {
 
                   <button
                     onClick={() => handleOpenEnquiry("Practical AI Training")}
-                    className="inline-flex items-center gap-2 rounded-full bg-[#18231E] px-5 py-2.5 text-xs font-medium text-white hover:bg-black transition-all cursor-pointer shadow-2xs group/btn"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#1A4EAB] px-5 py-2.5 text-xs font-medium text-white hover:bg-[#123A80] transition-all cursor-pointer shadow-2xs group/btn"
                   >
                     <span>Enquire about AI training</span>
                     <span className="transition-transform group-hover/btn:translate-x-0.5">→</span>
@@ -283,7 +284,7 @@ export default function TrainingPage() {
                     sizes="(max-width: 1024px) 100vw, 55vw"
                     className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
                   />
-                  <div className="absolute top-3 left-3 bg-[#FAF9F5]/90 backdrop-blur-xs px-3 py-1 rounded-full border border-black/5 text-[10px] font-mono font-semibold text-zinc-800">
+                  <div className="absolute top-3 left-3 bg-[#E8E0DB]/90 backdrop-blur-xs px-3 py-1 rounded-full border border-black/5 text-[10px] font-mono font-semibold text-zinc-800">
                     02 / PROGRAMME
                   </div>
                 </div>
@@ -313,7 +314,7 @@ export default function TrainingPage() {
 
                   <button
                     onClick={() => handleOpenEnquiry("AI Adoption Advisory")}
-                    className="inline-flex items-center gap-2 rounded-full bg-[#18231E] px-5 py-2.5 text-xs font-medium text-white hover:bg-black transition-all cursor-pointer shadow-2xs group/btn"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#1A4EAB] px-5 py-2.5 text-xs font-medium text-white hover:bg-[#123A80] transition-all cursor-pointer shadow-2xs group/btn"
                   >
                     <span>Discuss your AI priorities</span>
                     <span className="transition-transform group-hover/btn:translate-x-0.5">→</span>
@@ -331,7 +332,7 @@ export default function TrainingPage() {
                     sizes="(max-width: 1024px) 100vw, 55vw"
                     className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
                   />
-                  <div className="absolute top-3 left-3 bg-[#FAF9F5]/90 backdrop-blur-xs px-3 py-1 rounded-full border border-black/5 text-[10px] font-mono font-semibold text-zinc-800">
+                  <div className="absolute top-3 left-3 bg-[#E8E0DB]/90 backdrop-blur-xs px-3 py-1 rounded-full border border-black/5 text-[10px] font-mono font-semibold text-zinc-800">
                     03 / PROGRAMME
                   </div>
                 </div>
@@ -361,7 +362,7 @@ export default function TrainingPage() {
 
                   <button
                     onClick={() => handleOpenEnquiry("Conscious Leadership in the Age of AI")}
-                    className="inline-flex items-center gap-2 rounded-full bg-[#18231E] px-5 py-2.5 text-xs font-medium text-white hover:bg-black transition-all cursor-pointer shadow-2xs group/btn"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#1A4EAB] px-5 py-2.5 text-xs font-medium text-white hover:bg-[#123A80] transition-all cursor-pointer shadow-2xs group/btn"
                   >
                     <span>Explore leadership training</span>
                     <span className="transition-transform group-hover/btn:translate-x-0.5">→</span>
@@ -471,7 +472,7 @@ export default function TrainingPage() {
           className="object-cover object-center z-0"
         />
         {/* Subtle gradient overlay to ensure text contrast */}
-        <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[#FAF9F5]/95 via-[#FAF9F5]/80 sm:via-[#FAF9F5]/60 to-transparent lg:w-3/5 w-full pointer-events-none" />
+        <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[#E8E0DB]/95 via-[#E8E0DB]/80 sm:via-[#E8E0DB]/60 to-transparent lg:w-3/5 w-full pointer-events-none" />
 
         <div className="relative z-10 max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
@@ -506,7 +507,7 @@ export default function TrainingPage() {
                 <div className="rounded-2xl sm:rounded-3xl bg-white/90 backdrop-blur-md p-6 sm:p-8 shadow-xl border border-white/60 ring-1 ring-black/5 max-w-xl ml-auto">
                   {formSubmitted ? (
                     <div className="py-10 text-center space-y-3">
-                      <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-800 mx-auto flex items-center justify-center text-xl font-bold">
+                      <div className="w-12 h-12 rounded-full bg-[#EFEBE5] text-[#123A80] mx-auto flex items-center justify-center text-xl font-bold">
                         ✓
                       </div>
                       <h3 className="text-xl font-bold text-zinc-950">
@@ -517,7 +518,7 @@ export default function TrainingPage() {
                       </p>
                       <button
                         onClick={() => setFormSubmitted(false)}
-                        className="rounded-full bg-[#18231E] px-5 py-2 text-xs font-medium text-white hover:bg-black transition-all cursor-pointer mt-2"
+                        className="rounded-full bg-[#1A4EAB] px-5 py-2 text-xs font-medium text-white hover:bg-[#123A80] transition-all cursor-pointer mt-2"
                       >
                         Send another enquiry
                       </button>
@@ -632,7 +633,7 @@ export default function TrainingPage() {
                           <label className="flex items-start gap-2.5 text-xs text-zinc-600 cursor-pointer">
                             <input
                               type="checkbox"
-                              className="mt-0.5 rounded border-zinc-300 text-[#18231E] focus:ring-[#18231E]"
+                              className="mt-0.5 rounded border-zinc-300 text-[#1A1A22] focus:ring-[#1A1A22]"
                             />
                             <span>
                               I would also like to receive AWE Intelligence news, learning resources and programme updates. I can unsubscribe at any time.
@@ -650,7 +651,7 @@ export default function TrainingPage() {
 
                         <button
                           type="submit"
-                          className="w-full rounded-full bg-[#18231E] py-3 text-xs sm:text-sm font-medium text-white hover:bg-black transition-all cursor-pointer shadow-sm mt-2"
+                          className="w-full rounded-full bg-[#1A4EAB] py-3 text-xs sm:text-sm font-medium text-white hover:bg-[#123A80] transition-all cursor-pointer shadow-sm mt-2"
                         >
                           Send enquiry →
                         </button>
@@ -670,7 +671,7 @@ export default function TrainingPage() {
           onClick={() => setDiscoveryModalOpen(false)}
         >
           <div
-            className="relative w-full max-w-md rounded-2xl bg-[#FAF9F5] p-6 sm:p-8 shadow-2xl border border-zinc-200"
+            className="relative w-full max-w-md rounded-2xl bg-[#E8E0DB] p-6 sm:p-8 shadow-2xl border border-zinc-200"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -691,7 +692,7 @@ export default function TrainingPage() {
                 const el = document.getElementById("enquire");
                 if (el) el.scrollIntoView({ behavior: "smooth" });
               }}
-              className="w-full rounded-full bg-[#18231E] py-2.5 text-xs font-medium text-white hover:bg-black transition-all"
+              className="w-full rounded-full bg-[#1A4EAB] py-2.5 text-xs font-medium text-white hover:bg-[#123A80] transition-all"
             >
               Continue to Enquiry Form →
             </button>

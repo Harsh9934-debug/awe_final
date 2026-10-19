@@ -49,7 +49,7 @@ export default function AcademyPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FAF9F5] text-[#141815] flex flex-col antialiased selection:bg-[#18231e] selection:text-white">
+    <div className="min-h-screen bg-[#E8E0DB] text-[#1A1A22] flex flex-col antialiased selection:bg-[#1A1A22] selection:text-white">
       {/* Navbar */}
       <Navbar
         currentPath="/academy"
@@ -72,7 +72,7 @@ export default function AcademyPage() {
             className="object-cover object-right"
           />
           {/* Gradient overlay for readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#FAF9F5]/99 via-[#FAF9F5]/95 sm:via-[#FAF9F5]/50 to-transparent lg:w-[60%] w-full pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#E8E0DB]/99 via-[#E8E0DB]/95 sm:via-[#E8E0DB]/50 to-transparent lg:w-[60%] w-full pointer-events-none" />
         </div>
 
         <div className="relative z-10 max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10 w-full">
@@ -96,7 +96,7 @@ export default function AcademyPage() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <a
                 href="#courses"
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#18231E] px-6 py-3 text-xs sm:text-sm font-medium text-white transition-all duration-200 hover:bg-black hover:shadow-sm cursor-pointer"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#1A4EAB] px-6 py-3 text-xs sm:text-sm font-medium text-white transition-all duration-200 hover:bg-[#123A80] hover:shadow-sm cursor-pointer"
               >
                 <span>Explore our courses</span>
                 <span className="transition-transform duration-200 group-hover:translate-x-0.5">
@@ -211,7 +211,7 @@ export default function AcademyPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Course 1: Think First (Featured) */}
-            <div className="rounded-2xl border border-zinc-300/80 bg-[#FAF9F5] overflow-hidden flex flex-col justify-between shadow-xs hover:shadow-md transition-all group">
+            <div className="rounded-2xl border border-zinc-300/80 bg-[#E8E0DB] overflow-hidden flex flex-col justify-between shadow-xs hover:shadow-md transition-all group">
               <div>
                 <div className="relative aspect-[16/10] bg-zinc-100 overflow-hidden">
                   <Image
@@ -238,7 +238,7 @@ export default function AcademyPage() {
               <div className="p-6 pt-0">
                 <Link
                   href="/think-first"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#18231E] px-4 py-2.5 text-xs font-medium text-white hover:bg-black transition-all"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#1A4EAB] px-4 py-2.5 text-xs font-medium text-white hover:bg-[#123A80] transition-all"
                 >
                   <span>Learn more about Think First</span>
                   <span>→</span>
@@ -247,7 +247,7 @@ export default function AcademyPage() {
             </div>
 
             {/* Course 2: Practical AI Skills (Coming soon) */}
-            <div className="rounded-2xl border border-zinc-200/90 bg-[#FAF9F5] overflow-hidden flex flex-col justify-between shadow-2xs">
+            <div className="rounded-2xl border border-zinc-200/90 bg-[#E8E0DB] overflow-hidden flex flex-col justify-between shadow-2xs">
               <div>
                 <div className="relative aspect-[16/10] bg-zinc-100 opacity-90">
                   <Image
@@ -286,7 +286,7 @@ export default function AcademyPage() {
             </div>
 
             {/* Course 3: Human Wisdom for Modern Leaders */}
-            <div className="rounded-2xl border border-zinc-200/90 bg-[#FAF9F5] overflow-hidden flex flex-col justify-between shadow-2xs">
+            <div className="rounded-2xl border border-zinc-200/90 bg-[#E8E0DB] overflow-hidden flex flex-col justify-between shadow-2xs">
               <div>
                 <div className="relative aspect-[16/10] bg-zinc-100 opacity-90">
                   <Image
@@ -335,7 +335,7 @@ export default function AcademyPage() {
         >
           {/* Card 1 — Section 03: Featured Course */}
           <StackingCardItem index={0} className="h-screen">
-            <div className="h-[80%] sm:h-[76%] w-full overflow-hidden rounded-3xl border border-zinc-200 bg-[#EFEEE8] shadow-xl grid grid-cols-1 lg:grid-cols-2">
+            <div className="h-[80%] sm:h-[76%] w-full overflow-hidden rounded-3xl border border-zinc-200 bg-[#F6F6F6] shadow-xl grid grid-cols-1 lg:grid-cols-2">
               {/* Course Details */}
               <div className="flex flex-col justify-center p-8 sm:p-10 lg:p-14">
                 <div className="flex items-center gap-3 text-zinc-500 font-medium text-xs mb-3">
@@ -361,7 +361,7 @@ export default function AcademyPage() {
                 <div className="flex items-center gap-3">
                   <Link
                     href="/think-first"
-                    className="group inline-flex items-center gap-2 rounded-full bg-[#18231E] px-6 py-3 text-sm font-medium text-white transition-all duration-200 hover:bg-black hover:shadow-sm"
+                    className="group inline-flex items-center gap-2 rounded-full bg-[#1A4EAB] px-6 py-3 text-sm font-medium text-white transition-all duration-200 hover:bg-[#123A80] hover:shadow-sm"
                   >
                     <span>Learn more about Think First</span>
                     <span className="transition-transform group-hover:translate-x-0.5">
@@ -432,7 +432,7 @@ export default function AcademyPage() {
                 </p>
                 <Link
                   href="/training#enquire"
-                  className="group inline-flex items-center gap-2 rounded-full bg-[#18231E] px-6 py-3 text-sm font-medium text-white transition-all duration-200 hover:bg-black hover:shadow-xs"
+                  className="group inline-flex items-center gap-2 rounded-full bg-[#1A4EAB] px-6 py-3 text-sm font-medium text-white transition-all duration-200 hover:bg-[#123A80] hover:shadow-xs"
                 >
                   <span>Talk to us about team learning</span>
                   <span className="transition-transform group-hover:translate-x-0.5">

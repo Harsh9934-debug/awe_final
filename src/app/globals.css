@@ -1,13 +1,34 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FAF9F5;
-  --foreground: #181D1A;
+  /* AWE Intelligence palette (from aweintelligence.ai) */
+  --background: #E8E0DB;    /* warm beige — hero / primary bg */
+  --foreground: #1A1A22;    /* ink */
+
+  --awe-beige: #E8E0DB;     /* warm hero bg */
+  --awe-ink: #1A1A22;       /* headings / body text */
+  --awe-black: #111118;     /* dark panels */
+  --awe-blue: #1A4EAB;      /* royal-blue accent / CTA / links */
+  --awe-blue-deep: #123A80; /* hover / darker blue */
+  --awe-muted: #6B6660;     /* warm grey */
+
+  --awe-light: #F6F6F6;     /* light section bg */
+  --awe-tint: #EFEBE5;      /* soft warm tint */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-awe-beige: var(--awe-beige);
+  --color-awe-ink: var(--awe-ink);
+  --color-awe-black: var(--awe-black);
+  --color-awe-blue: var(--awe-blue);
+  --color-awe-blue-deep: var(--awe-blue-deep);
+  --color-awe-muted: var(--awe-muted);
+  --color-awe-light: var(--awe-light);
+  --color-awe-tint: var(--awe-tint);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

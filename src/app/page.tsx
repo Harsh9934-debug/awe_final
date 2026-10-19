@@ -5,6 +5,8 @@ import { useState } from "react";
 import StackingCards, {
   StackingCardItem,
 } from "@/components/ui/stacking-cards";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   // State for interactive FAQ accordion (Section 07)
@@ -131,140 +133,9 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FAF9F5] text-[#141815] flex flex-col antialiased selection:bg-[#18231e] selection:text-white">
-      {/* 1. NAVIGATION BAR (Floating transparent header seamlessly positioned over hero) */}
-      <header className="absolute top-0 left-0 right-0 z-30 w-full transition-all">
-        <div className="max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10 h-24 flex items-center justify-between">
-          {/* Logo */}
-          <a href="#" className="flex items-center group" aria-label="AWE Intelligence">
-            <Image
-              src="/logo-black.png"
-              alt="AWE Intelligence"
-              width={236}
-              height={100}
-              priority
-              className="h-7 w-auto"
-            />
-          </a>
-
-          {/* Center Navigation Links */}
-          <nav className="hidden md:flex items-center gap-4 text-[13px] font-normal text-zinc-700">
-            <a
-              href="/training"
-              className="hover:text-black transition-colors"
-            >
-              Training &amp; Advisory
-            </a>
-            <span className="text-zinc-400 text-xs select-none">·</span>
-            <a
-              href="#approach"
-              className="hover:text-black transition-colors"
-            >
-              Our Approach
-            </a>
-            <span className="text-zinc-400 text-xs select-none">·</span>
-            <a
-              href="/academy"
-              className="hover:text-black transition-colors"
-            >
-              Academy
-            </a>
-            <span className="text-zinc-400 text-xs select-none">·</span>
-            <a
-              href="#about"
-              className="hover:text-black transition-colors"
-            >
-              About
-            </a>
-          </nav>
-
-          {/* Primary CTA Button */}
-          <div className="hidden sm:flex items-center">
-            <button
-              onClick={() => handleOpenModal("Discuss training for my team")}
-              className="group inline-flex items-center gap-2 rounded-full bg-[#18231E] px-5 py-2.5 text-xs font-medium text-white transition-all duration-200 hover:bg-black hover:shadow-sm cursor-pointer"
-            >
-              <span>Discuss training for my team</span>
-              <span className="transition-transform duration-200 group-hover:translate-x-0.5">
-                →
-              </span>
-            </button>
-          </div>
-
-          {/* Mobile hamburger button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-zinc-700 hover:text-black focus:outline-none"
-            aria-label="Toggle navigation menu"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              {mobileMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
-          </button>
-        </div>
-
-        {/* Mobile menu dropdown */}
-        {mobileMenuOpen && (
-          <div className="md:hidden px-6 pt-3 pb-6 border-b border-zinc-200/80 bg-[#FAF9F5]/98 backdrop-blur-md shadow-lg flex flex-col gap-4">
-            <a
-              href="/training"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-sm font-medium text-zinc-700 hover:text-black"
-            >
-              Training &amp; Advisory
-            </a>
-            <a
-              href="#approach"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-sm font-medium text-zinc-700 hover:text-black"
-            >
-              Our Approach
-            </a>
-            <a
-              href="/academy"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-sm font-medium text-zinc-700 hover:text-black"
-            >
-              Academy
-            </a>
-            <a
-              href="#about"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-sm font-medium text-zinc-700 hover:text-black"
-            >
-              About
-            </a>
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                handleOpenModal("Discuss training for my team");
-              }}
-              className="w-full text-center rounded-full bg-[#18231E] px-5 py-2.5 text-xs font-medium text-white hover:bg-black transition-all"
-            >
-              Discuss training for my team →
-            </button>
-          </div>
-        )}
-      </header>
+    <div className="min-h-screen bg-[#E8E0DB] text-[#1A1A22] flex flex-col antialiased selection:bg-[#1A1A22] selection:text-white">
+      {/* NAVIGATION */}
+      <Navbar currentPath="/" onOpenModal={handleOpenModal} />
 
       {/* 2. HERO SECTION */}
       <section className="relative w-full overflow-hidden min-h-screen flex items-center pt-24 pb-16 isolate">
@@ -279,7 +150,7 @@ export default function Home() {
             className="object-cover object-right"
           />
           {/* Subtle gradient overlay to guarantee text legibility */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#FAF9F5]/95 via-[#FAF9F5]/75 sm:via-[#FAF9F5]/50 to-transparent lg:w-[60%] w-full pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#E8E0DB]/95 via-[#E8E0DB]/75 sm:via-[#E8E0DB]/50 to-transparent lg:w-[60%] w-full pointer-events-none" />
         </div>
 
         <div className="relative z-10 max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10 w-full">
@@ -310,7 +181,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <button
                 onClick={() => handleOpenModal("Explore training for your team")}
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#18231E] px-6 py-3 text-xs sm:text-sm font-medium text-white transition-all duration-200 hover:bg-black hover:shadow-sm cursor-pointer"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#1A4EAB] px-6 py-3 text-xs sm:text-sm font-medium text-white transition-all duration-200 hover:bg-[#123A80] hover:shadow-sm cursor-pointer"
               >
                 <span>Explore training for your team</span>
                 <span className="transition-transform duration-200 group-hover:translate-x-0.5">
@@ -337,7 +208,7 @@ export default function Home() {
         >
           {/* Card 1 — Section 02 */}
           <StackingCardItem index={0} className="h-screen">
-            <div className="h-[80%] sm:h-[76%] w-full overflow-hidden rounded-3xl border border-zinc-200 bg-[#EFEEE8] shadow-xl grid grid-cols-1 lg:grid-cols-2">
+            <div className="h-[80%] sm:h-[76%] w-full overflow-hidden rounded-3xl border border-zinc-200 bg-[#F6F6F6] shadow-xl grid grid-cols-1 lg:grid-cols-2">
               {/* Image */}
               <div className="relative min-h-[220px] lg:min-h-full bg-zinc-100">
                 <Image
@@ -476,7 +347,7 @@ export default function Home() {
             />
 
             {/* White gradient overlay for text legibility */}
-            <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[#FAF9F5]/95 via-[#FAF9F5]/85 sm:via-[#FAF9F5]/65 to-transparent lg:w-4/5 w-full pointer-events-none" />
+            <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[#E8E0DB]/95 via-[#E8E0DB]/85 sm:via-[#E8E0DB]/65 to-transparent lg:w-4/5 w-full pointer-events-none" />
 
             {/* Content overlay */}
             <div className="relative max-w-xl z-10">
@@ -501,7 +372,7 @@ export default function Home() {
               {/* Button */}
               <button
                 onClick={() => handleOpenModal("Discuss training for my team")}
-                className="group inline-flex items-center gap-2 rounded-full bg-[#18231E] px-7 py-4 text-sm font-medium text-white transition-all duration-200 hover:bg-black hover:shadow-md cursor-pointer"
+                className="group inline-flex items-center gap-2 rounded-full bg-[#1A4EAB] px-7 py-4 text-sm font-medium text-white transition-all duration-200 hover:bg-[#123A80] hover:shadow-md cursor-pointer"
               >
                 <span>Discuss training for my team</span>
                 <span className="transition-transform duration-200 group-hover:translate-x-0.5">
@@ -549,7 +420,7 @@ export default function Home() {
                 />
               </div>
               <div className="relative flex flex-col px-6 pt-11 pb-7">
-                <div className="absolute -top-7 left-6 w-14 h-14 rounded-full bg-[#18231E] flex items-center justify-center shadow-lg ring-4 ring-white">
+                <div className="absolute -top-7 left-6 w-14 h-14 rounded-full bg-[#1A1A22] flex items-center justify-center shadow-lg ring-4 ring-white">
                   <svg
                     className="w-6 h-6 text-white"
                     fill="none"
@@ -585,7 +456,7 @@ export default function Home() {
                 />
               </div>
               <div className="relative flex flex-col px-6 pt-11 pb-7">
-                <div className="absolute -top-7 left-6 w-14 h-14 rounded-full bg-[#18231E] flex items-center justify-center shadow-lg ring-4 ring-white">
+                <div className="absolute -top-7 left-6 w-14 h-14 rounded-full bg-[#1A1A22] flex items-center justify-center shadow-lg ring-4 ring-white">
                   <svg
                     className="w-6 h-6 text-white"
                     fill="none"
@@ -623,7 +494,7 @@ export default function Home() {
                 />
               </div>
               <div className="relative flex flex-col px-6 pt-11 pb-7">
-                <div className="absolute -top-7 left-6 w-14 h-14 rounded-full bg-[#18231E] flex items-center justify-center shadow-lg ring-4 ring-white">
+                <div className="absolute -top-7 left-6 w-14 h-14 rounded-full bg-[#1A1A22] flex items-center justify-center shadow-lg ring-4 ring-white">
                   <svg
                     className="w-6 h-6 text-white"
                     fill="none"
@@ -722,7 +593,7 @@ export default function Home() {
                     <span className="font-mono text-xs font-semibold tracking-wider text-zinc-400 group-hover:text-zinc-950 transition-colors">
                       {step.n} · {step.phase}
                     </span>
-                    <div className="w-9 h-9 rounded-xl bg-zinc-100 group-hover:bg-[#18231E] group-hover:text-white text-zinc-700 flex items-center justify-center transition-all duration-300 shadow-2xs">
+                    <div className="w-9 h-9 rounded-xl bg-zinc-100 group-hover:bg-[#1A1A22] group-hover:text-white text-zinc-700 flex items-center justify-center transition-all duration-300 shadow-2xs">
                       <svg
                         className="w-[18px] h-[18px]"
                         viewBox="0 0 24 24"
@@ -773,7 +644,7 @@ export default function Home() {
               {/* Intellectual Integrity Pill */}
               <div className="pt-2">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-200/60 text-zinc-700 text-xs font-medium">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#1A4EAB]"></span>
                   <span>Peer-reviewed rationale · Transparent boundaries</span>
                 </div>
               </div>
@@ -832,7 +703,7 @@ export default function Home() {
                               {paper.author}
                             </span>
                             <span className="w-1 h-1 rounded-full bg-zinc-300"></span>
-                            <span className="text-[10px] uppercase font-semibold tracking-wider text-emerald-800">
+                            <span className="text-[10px] uppercase font-semibold tracking-wider text-[#123A80]">
                               {paper.tag}
                             </span>
                           </div>
@@ -852,7 +723,7 @@ export default function Home() {
                   </p>
                   <button
                     onClick={handleExploreResearch}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#18231E] hover:text-black cursor-pointer group"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1A1A22] hover:text-black cursor-pointer group"
                   >
                     <span>View Studies & Methodology</span>
                     <span className="transition-transform group-hover:translate-x-1">→</span>
@@ -921,7 +792,7 @@ export default function Home() {
               <div>
                 <button
                   onClick={() => handleOpenModal("Talk to us about your team")}
-                  className="group inline-flex items-center gap-2 rounded-full bg-[#18231E] px-6 py-3.5 text-xs sm:text-sm font-medium text-white transition-all duration-200 hover:bg-black hover:shadow-xs cursor-pointer"
+                  className="group inline-flex items-center gap-2 rounded-full bg-[#1A4EAB] px-6 py-3.5 text-xs sm:text-sm font-medium text-white transition-all duration-200 hover:bg-[#123A80] hover:shadow-xs cursor-pointer"
                 >
                   <span>Talk to us about your team</span>
                   <span className="transition-transform duration-200 group-hover:translate-x-1">
@@ -935,7 +806,7 @@ export default function Home() {
       </section>
 
       {/* 8. SECTION 07: GENERAL QUESTIONS */}
-      <section id="faq" className="w-full py-20 sm:py-32 border-t border-zinc-200/80 bg-[#FAF9F5] relative isolate">
+      <section id="faq" className="w-full py-20 sm:py-32 border-t border-zinc-200/80 bg-[#E8E0DB] relative isolate">
         <div className="max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Column: Sticky anchor sidebar */}
@@ -966,7 +837,7 @@ export default function Home() {
                       onClick={() => toggleFaq(idx)}
                       className={`text-xs px-3.5 py-1.5 rounded-full transition-all duration-200 cursor-pointer font-medium ${
                         openFaq === idx
-                          ? "bg-[#18231E] text-white shadow-xs"
+                          ? "bg-[#1A1A22] text-white shadow-xs"
                           : "bg-zinc-200/60 text-zinc-700 hover:bg-zinc-300/80 hover:text-zinc-950"
                       }`}
                     >
@@ -986,7 +857,7 @@ export default function Home() {
                 </p>
                 <button
                   onClick={() => handleOpenModal("Discuss training for my team")}
-                  className="group inline-flex items-center gap-2 text-xs font-semibold text-[#18231E] hover:text-black cursor-pointer pt-1"
+                  className="group inline-flex items-center gap-2 text-xs font-semibold text-[#1A1A22] hover:text-black cursor-pointer pt-1"
                 >
                   <span>Discuss training for my team</span>
                   <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
@@ -1033,7 +904,7 @@ export default function Home() {
                         <div
                           className={`w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-300 ${
                             isOpen
-                              ? "bg-[#18231E] border-[#18231E] text-white rotate-45 scale-105"
+                              ? "bg-[#1A1A22] border-[#1A1A22] text-white rotate-45 scale-105"
                               : "border-zinc-300 text-zinc-500 group-hover:border-zinc-900 group-hover:text-zinc-900"
                           }`}
                         >
@@ -1075,7 +946,7 @@ export default function Home() {
       {/* 9. SECTION 08: RESEARCH BEHIND OUR APPROACH */}
       <section
         id="research"
-        className="w-full py-20 sm:py-32 border-t border-zinc-200/80 bg-[#FAF9F5] relative isolate"
+        className="w-full py-20 sm:py-32 border-t border-zinc-200/80 bg-[#E8E0DB] relative isolate"
       >
         <div className="max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -1098,7 +969,7 @@ export default function Home() {
               {/* Distinguished Methodological Note Card */}
               <div className="rounded-2xl border border-zinc-300/80 bg-white/70 backdrop-blur-xs p-5 sm:p-6 shadow-2xs space-y-3.5">
                 <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wider text-zinc-900">
-                  <span className="w-2 h-2 rounded-full bg-emerald-600 inline-block"></span>
+                  <span className="w-2 h-2 rounded-full bg-[#1A4EAB] inline-block"></span>
                   Methodological Integrity
                 </div>
                 <p className="text-xs text-zinc-600 leading-relaxed font-normal">
@@ -1149,7 +1020,7 @@ export default function Home() {
                         <div
                           className={`w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-300 ${
                             isOpen
-                              ? "bg-[#18231E] border-[#18231E] text-white rotate-45 scale-105"
+                              ? "bg-[#1A1A22] border-[#1A1A22] text-white rotate-45 scale-105"
                               : "border-zinc-300 text-zinc-500 group-hover:border-zinc-900 group-hover:text-zinc-900"
                           }`}
                         >
@@ -1188,75 +1059,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 10. FOOTER */}
-      <footer className="w-full bg-[#111613] text-[#FAF9F5] py-14 sm:py-16">
-        <div className="max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10">
-          {/* Top Row: Brand & Tagline + Navigation Links */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 pb-10 border-b border-zinc-800">
-            {/* Brand & Tagline */}
-            <div>
-              <div className="flex items-center mb-2.5">
-                <Image
-                  src="/logo-white.png"
-                  alt="AWE Intelligence"
-                  width={236}
-                  height={100}
-                  className="h-10 w-auto"
-                />
-              </div>
-              <p className="text-xs text-zinc-400">
-                Practical AI skills. Conscious leadership. Human awareness.
-              </p>
-            </div>
-
-            {/* Navigation links */}
-            <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 text-xs text-zinc-300">
-              <a
-                href="/training"
-                className="hover:text-white transition-colors"
-              >
-                Training &amp; Advisory
-              </a>
-              <span className="text-zinc-600">·</span>
-              <a
-                href="#approach"
-                className="hover:text-white transition-colors"
-              >
-                Our Approach
-              </a>
-              <span className="text-zinc-600">·</span>
-              <a href="/academy" className="hover:text-white transition-colors">
-                Academy
-              </a>
-              <span className="text-zinc-600">·</span>
-              <a href="#about" className="hover:text-white transition-colors">
-                About
-              </a>
-              <span className="text-zinc-600">·</span>
-              <button
-                onClick={() => handleOpenModal("Contact Us")}
-                className="hover:text-white transition-colors cursor-pointer"
-              >
-                Contact
-              </button>
-            </div>
-          </div>
-
-          {/* Bottom Row: Legal links & Copyright */}
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pt-6 text-[11px] text-zinc-500">
-            <div className="flex items-center gap-3">
-              <a href="/privacy" className="hover:text-zinc-300 transition-colors">
-                Privacy Policy
-              </a>
-              <span>·</span>
-              <a href="/terms" className="hover:text-zinc-300 transition-colors">
-                Terms
-              </a>
-            </div>
-            <div>© 2026 Awethentic Group Limited</div>
-          </div>
-        </div>
-      </footer>
+      {/* FOOTER */}
+      <Footer onOpenModal={handleOpenModal} />
 
       {/* INTERACTIVE MODAL DIALOG */}
       {isModalOpen && (
@@ -1265,7 +1069,7 @@ export default function Home() {
           onClick={() => setIsModalOpen(false)}
         >
           <div
-            className="relative w-full max-w-md rounded-2xl bg-[#FAF9F5] p-6 sm:p-7 shadow-2xl border border-zinc-200"
+            className="relative w-full max-w-md rounded-2xl bg-[#E8E0DB] p-6 sm:p-7 shadow-2xl border border-zinc-200"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
@@ -1279,7 +1083,7 @@ export default function Home() {
 
             {formSubmitted ? (
               <div className="py-8 text-center space-y-3">
-                <div className="w-10 h-10 rounded-full bg-emerald-100 text-emerald-800 mx-auto flex items-center justify-center text-lg">
+                <div className="w-10 h-10 rounded-full bg-[#EFEBE5] text-[#123A80] mx-auto flex items-center justify-center text-lg">
                   ✓
                 </div>
                 <h3 className="text-lg font-semibold text-zinc-900">
@@ -1291,7 +1095,7 @@ export default function Home() {
                 </p>
                 <button
                   onClick={() => setIsModalOpen(false)}
-                  className="rounded-full bg-[#18231E] px-5 py-2 text-xs font-medium text-white hover:bg-black transition-all cursor-pointer"
+                  className="rounded-full bg-[#1A4EAB] px-5 py-2 text-xs font-medium text-white hover:bg-[#123A80] transition-all cursor-pointer"
                 >
                   Close
                 </button>
@@ -1322,7 +1126,7 @@ export default function Home() {
                       type="text"
                       required
                       placeholder="Jane Doe"
-                      className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-xs text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#18231E]"
+                      className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-xs text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#1A1A22]"
                     />
                   </div>
 
@@ -1334,7 +1138,7 @@ export default function Home() {
                       type="email"
                       required
                       placeholder="jane@company.com"
-                      className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-xs text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#18231E]"
+                      className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-xs text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#1A1A22]"
                     />
                   </div>
 
@@ -1345,7 +1149,7 @@ export default function Home() {
                     <input
                       type="text"
                       placeholder="Acme Corp · 25 team members"
-                      className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-xs text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#18231E]"
+                      className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-xs text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#1A1A22]"
                     />
                   </div>
 
@@ -1356,13 +1160,13 @@ export default function Home() {
                     <textarea
                       rows={3}
                       placeholder="Tell us about your team's goals, current AI adoption, or any specific challenges..."
-                      className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-xs text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#18231E]"
+                      className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-xs text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#1A1A22]"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full rounded-full bg-[#18231E] py-2.5 text-xs font-medium text-white hover:bg-black transition-all cursor-pointer shadow-2xs mt-2"
+                    className="w-full rounded-full bg-[#1A4EAB] py-2.5 text-xs font-medium text-white hover:bg-[#123A80] transition-all cursor-pointer shadow-2xs mt-2"
                   >
                     Send Enquiry →
                   </button>

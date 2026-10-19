@@ -25,7 +25,7 @@ export default function ContactModal({
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-lg rounded-2xl bg-[#FAF9F5] p-6 sm:p-8 shadow-2xl border border-zinc-200 overflow-y-auto max-h-[90vh]"
+        className="relative w-full max-w-lg rounded-2xl bg-[#E8E0DB] p-6 sm:p-8 shadow-2xl border border-zinc-200 overflow-y-auto max-h-[90vh]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
@@ -39,7 +39,7 @@ export default function ContactModal({
 
         {formSubmitted ? (
           <div className="py-8 text-center space-y-4">
-            <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-800 mx-auto flex items-center justify-center text-xl">
+            <div className="w-12 h-12 rounded-full bg-[#EFEBE5] text-[#123A80] mx-auto flex items-center justify-center text-xl">
               ✓
             </div>
             <h3 className="text-xl font-semibold text-zinc-900">
@@ -50,7 +50,7 @@ export default function ContactModal({
             </p>
             <button
               onClick={onClose}
-              className="rounded-full bg-[#18231E] px-6 py-2.5 text-xs font-medium text-white hover:bg-black transition-all cursor-pointer"
+              className="rounded-full bg-[#1A4EAB] px-6 py-2.5 text-xs font-medium text-white hover:bg-[#123A80] transition-all cursor-pointer"
             >
               Close
             </button>
@@ -79,7 +79,7 @@ export default function ContactModal({
                   type="text"
                   required
                   placeholder="Jane Doe"
-                  className="w-full rounded-lg border border-zinc-300 bg-white px-3.5 py-2 text-xs sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#18231E]"
+                  className="w-full rounded-lg border border-zinc-300 bg-white px-3.5 py-2 text-xs sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#1A1A22]"
                 />
               </div>
 
@@ -91,7 +91,7 @@ export default function ContactModal({
                   type="email"
                   required
                   placeholder="jane@company.com"
-                  className="w-full rounded-lg border border-zinc-300 bg-white px-3.5 py-2 text-xs sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#18231E]"
+                  className="w-full rounded-lg border border-zinc-300 bg-white px-3.5 py-2 text-xs sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#1A1A22]"
                 />
               </div>
 
@@ -103,7 +103,7 @@ export default function ContactModal({
                   type="text"
                   required
                   placeholder="Company or Organisation name"
-                  className="w-full rounded-lg border border-zinc-300 bg-white px-3.5 py-2 text-xs sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#18231E]"
+                  className="w-full rounded-lg border border-zinc-300 bg-white px-3.5 py-2 text-xs sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#1A1A22]"
                 />
               </div>
 
@@ -114,7 +114,7 @@ export default function ContactModal({
                 <select
                   value={topic}
                   onChange={(e) => setTopic(e.target.value)}
-                  className="w-full rounded-lg border border-zinc-300 bg-white px-3.5 py-2 text-xs sm:text-sm text-zinc-900 focus:outline-none focus:ring-1.5 focus:ring-[#18231E]"
+                  className="w-full rounded-lg border border-zinc-300 bg-white px-3.5 py-2 text-xs sm:text-sm text-zinc-900 focus:outline-none focus:ring-1.5 focus:ring-[#1A1A22]"
                 >
                   <option value="Practical AI Training">
                     Practical AI Training
@@ -140,7 +140,7 @@ export default function ContactModal({
                   <input
                     type="text"
                     placeholder="e.g. 10–25"
-                    className="w-full rounded-lg border border-zinc-300 bg-white px-3.5 py-2 text-xs sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#18231E]"
+                    className="w-full rounded-lg border border-zinc-300 bg-white px-3.5 py-2 text-xs sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#1A1A22]"
                   />
                 </div>
                 <div>
@@ -150,7 +150,7 @@ export default function ContactModal({
                   <input
                     type="text"
                     placeholder="e.g. Next month, Q3"
-                    className="w-full rounded-lg border border-zinc-300 bg-white px-3.5 py-2 text-xs sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#18231E]"
+                    className="w-full rounded-lg border border-zinc-300 bg-white px-3.5 py-2 text-xs sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#1A1A22]"
                   />
                 </div>
               </div>
@@ -162,7 +162,7 @@ export default function ContactModal({
                     type="checkbox"
                     checked={marketingConsent}
                     onChange={(e) => setMarketingConsent(e.target.checked)}
-                    className="mt-0.5 rounded border-zinc-300 text-[#18231E] focus:ring-[#18231E]"
+                    className="mt-0.5 rounded border-zinc-300 text-[#1A1A22] focus:ring-[#1A1A22]"
                   />
                   <span>
                     I would also like to receive AWE Intelligence news, learning resources and programme updates. I can unsubscribe at any time.
@@ -180,7 +180,7 @@ export default function ContactModal({
 
               <button
                 type="submit"
-                className="w-full rounded-full bg-[#18231E] py-3 text-xs sm:text-sm font-medium text-white hover:bg-black transition-all cursor-pointer shadow-sm mt-3"
+                className="w-full rounded-full bg-[#1A4EAB] py-3 text-xs sm:text-sm font-medium text-white hover:bg-[#123A80] transition-all cursor-pointer shadow-sm mt-3"
               >
                 Send enquiry →
               </button>

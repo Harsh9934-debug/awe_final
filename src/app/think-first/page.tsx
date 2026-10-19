@@ -87,7 +87,7 @@ export default function ThinkFirstPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FAF9F5] text-[#141815] flex flex-col antialiased selection:bg-[#18231e] selection:text-white">
+    <div className="min-h-screen bg-[#E8E0DB] text-[#1A1A22] flex flex-col antialiased selection:bg-[#1A1A22] selection:text-white">
       {/* Navbar */}
       <Navbar
         currentPath="/academy"
@@ -109,7 +109,7 @@ export default function ThinkFirstPage() {
             sizes="100vw"
             className="object-cover object-right"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#FAF9F5]/95 via-[#FAF9F5]/75 sm:via-[#FAF9F5]/50 to-transparent lg:w-[60%] w-full pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#E8E0DB]/95 via-[#E8E0DB]/75 sm:via-[#E8E0DB]/50 to-transparent lg:w-[60%] w-full pointer-events-none" />
         </div>
 
         <div className="relative z-10 max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10 w-full">
@@ -144,7 +144,7 @@ export default function ThinkFirstPage() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <button
                 onClick={scrollToUpdates}
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#18231E] px-6 py-3 text-xs sm:text-sm font-medium text-white transition-all duration-200 hover:bg-black hover:shadow-sm cursor-pointer"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#1A4EAB] px-6 py-3 text-xs sm:text-sm font-medium text-white transition-all duration-200 hover:bg-[#123A80] hover:shadow-sm cursor-pointer"
               >
                 <span>Get course updates</span>
                 <span className="transition-transform duration-200 group-hover:translate-x-0.5">
@@ -165,7 +165,7 @@ export default function ThinkFirstPage() {
       </section>
 
       {/* 2. FOUR FEATURES ROW */}
-      <section className="w-full py-12 border-b border-zinc-200/60 bg-[#FAF9F5]">
+      <section className="w-full py-12 border-b border-zinc-200/60 bg-[#E8E0DB]">
         <div className="max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             <div className="flex flex-col items-start p-2">
@@ -272,7 +272,7 @@ export default function ThinkFirstPage() {
 
               <button
                 onClick={scrollToUpdates}
-                className="group inline-flex items-center gap-2 rounded-full bg-[#18231E] px-6 py-3 text-xs sm:text-sm font-medium text-white transition-all duration-200 hover:bg-black hover:shadow-xs cursor-pointer"
+                className="group inline-flex items-center gap-2 rounded-full bg-[#1A4EAB] px-6 py-3 text-xs sm:text-sm font-medium text-white transition-all duration-200 hover:bg-[#123A80] hover:shadow-xs cursor-pointer"
               >
                 <span>Get course updates</span>
                 <span className="transition-transform group-hover:translate-x-0.5">→</span>
@@ -346,7 +346,7 @@ export default function ThinkFirstPage() {
 
             {/* Right: What's included card */}
             <div className="lg:col-span-5">
-              <div className="rounded-2xl border border-zinc-200/90 bg-[#F4F4F0] p-6 sm:p-7 shadow-xs">
+              <div className="rounded-2xl border border-zinc-200/90 bg-[#E8E0DB] p-6 sm:p-7 shadow-xs">
                 <div className="relative aspect-[16/10] rounded-xl overflow-hidden mb-5 bg-zinc-200">
                   <Image
                     src="/sec3.png"
@@ -364,30 +364,30 @@ export default function ThinkFirstPage() {
 
                 <ul className="space-y-2 text-xs text-zinc-700 mb-6">
                   <li className="flex items-center gap-2">
-                    <span className="text-emerald-700">✓</span>
+                    <span className="text-[#1A4EAB]">✓</span>
                     <span>On-demand video lessons</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="text-emerald-700">✓</span>
+                    <span className="text-[#1A4EAB]">✓</span>
                     <span>Practical exercises and templates</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="text-emerald-700">✓</span>
+                    <span className="text-[#1A4EAB]">✓</span>
                     <span>Reflection practices (optional breathwork)</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="text-emerald-700">✓</span>
+                    <span className="text-[#1A4EAB]">✓</span>
                     <span>Lifetime self-paced access</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="text-emerald-700">✓</span>
+                    <span className="text-[#1A4EAB]">✓</span>
                     <span>Certificate of completion</span>
                   </li>
                 </ul>
 
                 <button
                   onClick={scrollToUpdates}
-                  className="w-full rounded-full bg-[#18231E] py-2.5 text-xs font-medium text-white hover:bg-black transition-all cursor-pointer text-center"
+                  className="w-full rounded-full bg-[#1A4EAB] py-2.5 text-xs font-medium text-white hover:bg-[#123A80] transition-all cursor-pointer text-center"
                 >
                   Get course updates →
                 </button>
@@ -431,7 +431,7 @@ export default function ThinkFirstPage() {
                 Through Think First, Sean brings his experience in storytelling, leadership and experiential learning to help you explore how to work with emerging technology while strengthening the human qualities you bring to it.
               </p>
               <Link
-                href="/#about"
+                href="/about"
                 className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-900 hover:text-black border-b border-black pb-0.5"
               >
                 <span>Read more about Sean</span>
@@ -500,7 +500,7 @@ export default function ThinkFirstPage() {
               className="object-cover object-center z-0"
             />
             {/* Subtle gradient overlay to ensure text contrast */}
-            <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[#FAF9F5]/95 via-[#FAF9F5]/80 sm:via-[#FAF9F5]/60 to-transparent lg:w-3/5 w-full pointer-events-none" />
+            <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[#E8E0DB]/95 via-[#E8E0DB]/80 sm:via-[#E8E0DB]/60 to-transparent lg:w-3/5 w-full pointer-events-none" />
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center z-10 relative">
               {/* Left Context */}
@@ -524,7 +524,7 @@ export default function ThinkFirstPage() {
                 <div className="rounded-2xl bg-white/95 backdrop-blur-md p-6 sm:p-8 shadow-xl border border-zinc-200/80 max-w-md ml-auto">
                   {formSubmitted ? (
                     <div className="py-8 text-center space-y-3">
-                      <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-800 mx-auto flex items-center justify-center text-xl font-bold">
+                      <div className="w-12 h-12 rounded-full bg-[#EFEBE5] text-[#123A80] mx-auto flex items-center justify-center text-xl font-bold">
                         ✓
                       </div>
                       <h3 className="text-lg font-bold text-zinc-950">
@@ -535,7 +535,7 @@ export default function ThinkFirstPage() {
                       </p>
                       <button
                         onClick={() => setFormSubmitted(false)}
-                        className="rounded-full bg-[#18231E] px-5 py-2 text-xs font-medium text-white hover:bg-black transition-all cursor-pointer mt-2"
+                        className="rounded-full bg-[#1A4EAB] px-5 py-2 text-xs font-medium text-white hover:bg-[#123A80] transition-all cursor-pointer mt-2"
                       >
                         Register another email
                       </button>
@@ -564,7 +564,7 @@ export default function ThinkFirstPage() {
                             type="text"
                             required
                             placeholder="Jane Doe"
-                            className="w-full rounded-lg border border-zinc-300 bg-white px-3.5 py-2 text-xs text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#18231E]"
+                            className="w-full rounded-lg border border-zinc-300 bg-white px-3.5 py-2 text-xs text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#1A1A22]"
                           />
                         </div>
 
@@ -576,7 +576,7 @@ export default function ThinkFirstPage() {
                             type="email"
                             required
                             placeholder="jane@company.com"
-                            className="w-full rounded-lg border border-zinc-300 bg-white px-3.5 py-2 text-xs text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#18231E]"
+                            className="w-full rounded-lg border border-zinc-300 bg-white px-3.5 py-2 text-xs text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-1.5 focus:ring-[#1A1A22]"
                           />
                         </div>
 
@@ -584,7 +584,7 @@ export default function ThinkFirstPage() {
                           <label className="flex items-start gap-2 text-xs text-zinc-600 cursor-pointer">
                             <input
                               type="checkbox"
-                              className="mt-0.5 rounded border-zinc-300 text-[#18231E] focus:ring-[#18231E]"
+                              className="mt-0.5 rounded border-zinc-300 text-[#1A1A22] focus:ring-[#1A1A22]"
                             />
                             <span>
                               I would also like to receive AWE Intelligence news, learning resources and programme updates. I can unsubscribe at any time.
@@ -602,7 +602,7 @@ export default function ThinkFirstPage() {
 
                         <button
                           type="submit"
-                          className="w-full rounded-full bg-[#18231E] py-3 text-xs sm:text-sm font-medium text-white hover:bg-black transition-all cursor-pointer shadow-sm mt-3"
+                          className="w-full rounded-full bg-[#1A4EAB] py-3 text-xs sm:text-sm font-medium text-white hover:bg-[#123A80] transition-all cursor-pointer shadow-sm mt-3"
                         >
                           Get course updates →
                         </button>

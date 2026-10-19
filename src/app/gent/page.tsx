@@ -178,7 +178,7 @@ export default function GenTPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FAF9F5] text-[#141815] flex flex-col antialiased selection:bg-[#18231e] selection:text-white">
+    <div className="min-h-screen bg-[#E8E0DB] text-[#1A1A22] flex flex-col antialiased selection:bg-[#1A1A22] selection:text-white">
       {/* Navbar */}
       <Navbar
         currentPath="/academy"
@@ -196,7 +196,7 @@ export default function GenTPage() {
             sizes="100vw"
             className="object-cover object-right"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#FAF9F5] via-[#FAF9F5]/85 sm:via-[#FAF9F5]/60 to-transparent lg:w-[62%] w-full pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#E8E0DB] via-[#E8E0DB]/85 sm:via-[#E8E0DB]/60 to-transparent lg:w-[62%] w-full pointer-events-none" />
         </div>
 
         <div className="relative z-10 max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10 w-full">
@@ -204,7 +204,7 @@ export default function GenTPage() {
             <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-zinc-500 mb-5">
               Gen.T
             </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-bold tracking-tight text-[#1b3a31] leading-[1.04] mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-bold tracking-tight text-[#1A4EAB] leading-[1.04] mb-6">
               AI skills
               <br />
               for a more
@@ -220,7 +220,7 @@ export default function GenTPage() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <button
                 onClick={openEnquiry}
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#18231E] px-6 py-3.5 text-sm font-medium text-white transition-all duration-200 hover:bg-black hover:shadow-md cursor-pointer"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#1A4EAB] px-6 py-3.5 text-sm font-medium text-white transition-all duration-200 hover:bg-[#123A80] hover:shadow-md cursor-pointer"
               >
                 <span>Enquire about Gen.T</span>
                 <span className="transition-transform duration-200 group-hover:translate-x-0.5">
@@ -249,9 +249,9 @@ export default function GenTPage() {
                   i > 0 ? "lg:border-l lg:border-zinc-200 lg:pl-8" : ""
                 }`}
               >
-                <div className="w-11 h-11 rounded-full bg-[#e7ece8] flex items-center justify-center mb-4">
+                <div className="w-11 h-11 rounded-full bg-[#EFEBE5] flex items-center justify-center mb-4">
                   <svg
-                    className="w-5 h-5 text-[#2f4a40]"
+                    className="w-5 h-5 text-[#6B6660]"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -262,7 +262,7 @@ export default function GenTPage() {
                     {f.icon}
                   </svg>
                 </div>
-                <h3 className="text-[15px] font-bold text-[#1b3a31] mb-1.5">
+                <h3 className="text-[15px] font-bold text-[#1A4EAB] mb-1.5">
                   {f.title}
                 </h3>
                 <p className="text-sm text-zinc-600 leading-relaxed max-w-[15rem]">
@@ -283,7 +283,7 @@ export default function GenTPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
               <SectionLabel num="01" text="About Gen.T" />
-              <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-[#1b3a31] leading-[1.08] mb-5">
+              <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-[#1A4EAB] leading-[1.08] mb-5">
                 More than AI training.
                 <br />
                 A broader foundation
@@ -299,7 +299,7 @@ export default function GenTPage() {
               </p>
               <button
                 onClick={openEnquiry}
-                className="group inline-flex items-center gap-2 rounded-full bg-[#18231E] px-6 py-3.5 text-sm font-medium text-white transition-all duration-200 hover:bg-black hover:shadow-md cursor-pointer"
+                className="group inline-flex items-center gap-2 rounded-full bg-[#1A4EAB] px-6 py-3.5 text-sm font-medium text-white transition-all duration-200 hover:bg-[#123A80] hover:shadow-md cursor-pointer"
               >
                 <span>Enquire about Gen.T</span>
                 <span className="transition-transform duration-200 group-hover:translate-x-0.5">
@@ -327,7 +327,7 @@ export default function GenTPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
               <SectionLabel num="02" text="Who it's for" />
-              <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-[#1b3a31] leading-[1.08] mb-5">
+              <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-[#1A4EAB] leading-[1.08] mb-5">
                 For curious, open-minded
                 <br />
                 young people.
@@ -343,9 +343,9 @@ export default function GenTPage() {
             <div className="space-y-7">
               {audience.map((a) => (
                 <div key={a.title} className="flex items-start gap-4">
-                  <div className="w-11 h-11 shrink-0 rounded-full bg-[#e7ece8] flex items-center justify-center">
+                  <div className="w-11 h-11 shrink-0 rounded-full bg-[#EFEBE5] flex items-center justify-center">
                     <svg
-                      className="w-5 h-5 text-[#2f4a40]"
+                      className="w-5 h-5 text-[#6B6660]"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -357,7 +357,7 @@ export default function GenTPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-[15px] font-bold text-[#1b3a31] mb-1">
+                    <h3 className="text-[15px] font-bold text-[#1A4EAB] mb-1">
                       {a.title}
                     </h3>
                     <p className="text-sm text-zinc-600 leading-relaxed max-w-md">
@@ -377,7 +377,7 @@ export default function GenTPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
               <SectionLabel num="03" text="Programme benefits" />
-              <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-[#1b3a31] leading-[1.08] mb-5">
+              <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold tracking-tight text-[#1A4EAB] leading-[1.08] mb-5">
                 Skills for today.
                 <br />
                 Perspective for tomorrow.
@@ -393,11 +393,11 @@ export default function GenTPage() {
               {benefits.map((b) => (
                 <div
                   key={b.title}
-                  className="rounded-xl border border-zinc-200/80 bg-[#F0F0EA] p-5"
+                  className="rounded-xl border border-zinc-200/80 bg-[#F6F6F6] p-5"
                 >
-                  <div className="w-9 h-9 rounded-full bg-[#e2e8e3] flex items-center justify-center mb-3">
+                  <div className="w-9 h-9 rounded-full bg-[#EFEBE5] flex items-center justify-center mb-3">
                     <svg
-                      className="w-[18px] h-[18px] text-[#2f4a40]"
+                      className="w-[18px] h-[18px] text-[#6B6660]"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -408,7 +408,7 @@ export default function GenTPage() {
                       {b.icon}
                     </svg>
                   </div>
-                  <h3 className="text-sm font-bold text-[#1b3a31] mb-1">
+                  <h3 className="text-sm font-bold text-[#1A4EAB] mb-1">
                     {b.title}
                   </h3>
                   <p className="text-xs text-zinc-600 leading-relaxed">
@@ -437,7 +437,7 @@ export default function GenTPage() {
 
             <div className="order-1 lg:order-2">
               <SectionLabel num="04" text="What you'll learn" />
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1b3a31] leading-[1.1] mb-4">
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1A4EAB] leading-[1.1] mb-4">
                 A practical and reflective curriculum.
               </h2>
               <p className="text-sm sm:text-[15px] text-zinc-600 leading-relaxed mb-7 max-w-lg">
@@ -455,10 +455,10 @@ export default function GenTPage() {
                         onClick={() => setOpenCurriculum(open ? null : i)}
                         className="w-full flex items-center gap-4 py-4 text-left cursor-pointer group"
                       >
-                        <span className="w-7 h-7 shrink-0 rounded-full border border-zinc-300 bg-white flex items-center justify-center text-[11px] font-bold text-[#1b3a31]">
+                        <span className="w-7 h-7 shrink-0 rounded-full border border-zinc-300 bg-white flex items-center justify-center text-[11px] font-bold text-[#1A4EAB]">
                           {String(i + 1).padStart(2, "0")}
                         </span>
-                        <span className="flex-1 text-sm font-semibold text-[#1b3a31]">
+                        <span className="flex-1 text-sm font-semibold text-[#1A4EAB]">
                           {c.title}
                         </span>
                         <span
@@ -489,7 +489,7 @@ export default function GenTPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
               <SectionLabel num="05" text="Meet the founder" />
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1b3a31] leading-[1.1] mb-5">
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1A4EAB] leading-[1.1] mb-5">
                 Guided by experience.
                 <br />
                 Grounded in people.
@@ -503,8 +503,8 @@ export default function GenTPage() {
                 judgement.
               </p>
               <Link
-                href="/#about"
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-[#1b3a31] hover:text-black border-b border-[#1b3a31] pb-0.5"
+                href="/about"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-[#1A4EAB] hover:text-black border-b border-[#1A4EAB] pb-0.5"
               >
                 <span>Read more about Sean</span>
                 <span>→</span>
@@ -530,7 +530,7 @@ export default function GenTPage() {
           <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-16 items-start">
             <div>
               <SectionLabel num="06" text="Frequently asked questions" />
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1b3a31]">
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1A4EAB]">
                 FAQs
               </h2>
             </div>
@@ -544,7 +544,7 @@ export default function GenTPage() {
                       onClick={() => setOpenFaq(open ? null : i)}
                       className="w-full flex items-center justify-between gap-4 py-4 text-left cursor-pointer"
                     >
-                      <span className="text-sm font-medium text-[#1b3a31]">
+                      <span className="text-sm font-medium text-[#1A4EAB]">
                         {f.q}
                       </span>
                       <span
@@ -578,10 +578,10 @@ export default function GenTPage() {
             sizes="100vw"
             className="object-cover object-center z-0"
           />
-          <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[#FAF9F5] via-[#FAF9F5]/80 to-transparent lg:w-3/4 w-full pointer-events-none" />
+          <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[#E8E0DB] via-[#E8E0DB]/80 to-transparent lg:w-3/4 w-full pointer-events-none" />
 
           <div className="relative z-10 max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-10 w-full py-14">
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1b3a31] mb-3">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1A4EAB] mb-3">
               Be part of Gen.T
             </h2>
             <p className="text-sm sm:text-base text-zinc-700 leading-relaxed mb-7 max-w-md">
@@ -590,7 +590,7 @@ export default function GenTPage() {
             </p>
             <button
               onClick={openEnquiry}
-              className="group inline-flex items-center gap-2 rounded-full bg-[#18231E] px-6 py-3.5 text-sm font-medium text-white transition-all duration-200 hover:bg-black hover:shadow-md cursor-pointer"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#1A4EAB] px-6 py-3.5 text-sm font-medium text-white transition-all duration-200 hover:bg-[#123A80] hover:shadow-md cursor-pointer"
             >
               <span>Enquire about Gen.T</span>
               <span className="transition-transform duration-200 group-hover:translate-x-1">
